@@ -1,0 +1,56 @@
+% TUH Dataset Preparation
+% YUVARAJ RAJAMANICKAM 11-SEP-2018
+
+clc; close all;clearvars;
+
+% Average Reference (AR)
+AR_chan_config = {'FP1','FP2','F3','F4','C3','C4','P3','P4','O1','O2','F7','F8','T3','T4','T5','T6','A1','A2','FZ','CZ','PZ'};
+filepath_AR = strcat('E:\Nanyang Technological University\1. Research\1. Seizure Detection\Database\TUH EEG Corpus\Seizure Corpus\Version_1.3.0\EEGs\v1.3.0\edf\train\01_tcp_ar\004\00000492\s003_2003_07_18\00000492_s003_t000');
+[a,b] = edfread([filepath_AR,'.edf']);
+Fs_AR = a.samples(1,1);
+EEG_chan_AR = [b(:,:)]';
+
+% Convert into TCP montage:
+TCP_montage = {'FP1-F7','F7-T3','T3-T5','T5-O1','FP2-F8','F8-T4','T4-T6','T6-O2','T3-C3','C3-CZ','CZ-C4','C4-T4','FP1-F3','F3-C3','C3-P3'...
+    ,'P3-O1','FP2-F4','F4-C4','C4-P4','P4-O2'};
+
+EEG_AR_TCP = [EEG_chan_AR(:,1)-EEG_chan_AR(:,11) EEG_chan_AR(:,11)-EEG_chan_AR(:,13) EEG_chan_AR(:,13)-EEG_chan_AR(:,15)...
+    EEG_chan_AR(:,15)-EEG_chan_AR(:,9) EEG_chan_AR(:,2)-EEG_chan_AR(:,12) EEG_chan_AR(:,12)-EEG_chan_AR(:,14) EEG_chan_AR(:,14)-EEG_chan_AR(:,16)...
+    EEG_chan_AR(:,16)-EEG_chan_AR(:,10) EEG_chan_AR(:,13)-EEG_chan_AR(:,5) EEG_chan_AR(:,5)-EEG_chan_AR(:,20) EEG_chan_AR(:,20)-EEG_chan_AR(:,6)...
+    EEG_chan_AR(:,6)-EEG_chan_AR(:,14) EEG_chan_AR(:,1)-EEG_chan_AR(:,3) EEG_chan_AR(:,3)-EEG_chan_AR(:,5) EEG_chan_AR(:,5)-EEG_chan_AR(:,7)...
+    EEG_chan_AR(:,7)-EEG_chan_AR(:,9) EEG_chan_AR(:,2)-EEG_chan_AR(:,4) EEG_chan_AR(:,4)-EEG_chan_AR(:,6) EEG_chan_AR(:,6)-EEG_chan_AR(:,8)...
+    EEG_chan_AR(:,8)-EEG_chan_AR(:,10)];
+
+
+%Linked ear reference (LE)
+LE_chan_config = {'FP1','FP2','F3','F4','C3','C4','A1','A2','P3','P4','O1','O2','F7','F8','T3','T4','T5','T6','FZ','CZ','PZ','OZ'};
+filepath_LE = strcat('E:\Nanyang Technological University\1. Research\1. Seizure Detection\Database\TUH EEG Corpus\Seizure Corpus\Version_1.3.0\EEGs\v1.3.0\edf\train\02_tcp_le\000\00000002\s005_2002_12_27\00000002_s005_t000');
+[x,y] = edfread([filepath_LE,'.edf']);
+Fs_LE = x.samples(1,1);
+EEG_chan_LE = [y(:,:)]';
+
+% Convert into TCP montage:
+EEG_LR_TCP = [EEG_chan_LE(:,1)-EEG_chan_LE(:,13) EEG_chan_LE(:,13)-EEG_chan_LE(:,15) EEG_chan_LE(:,15)-EEG_chan_LE(:,17)...
+    EEG_chan_LE(:,17)-EEG_chan_LE(:,11) EEG_chan_LE(:,2)-EEG_chan_LE(:,14) EEG_chan_LE(:,14)-EEG_chan_LE(:,16) EEG_chan_LE(:,16)-EEG_chan_LE(:,18)...
+    EEG_chan_LE(:,18)-EEG_chan_LE(:,12) EEG_chan_LE(:,15)-EEG_chan_LE(:,5) EEG_chan_LE(:,5)-EEG_chan_LE(:,20) EEG_chan_LE(:,20)-EEG_chan_LE(:,6)...
+    EEG_chan_LE(:,6)-EEG_chan_LE(:,16) EEG_chan_LE(:,1)-EEG_chan_LE(:,3) EEG_chan_LE(:,3)-EEG_chan_LE(:,5) EEG_chan_LE(:,5)-EEG_chan_LE(:,9)...
+    EEG_chan_LE(:,9)-EEG_chan_LE(:,11) EEG_chan_LE(:,2)-EEG_chan_LE(:,4) EEG_chan_LE(:,4)-EEG_chan_LE(:,6) EEG_chan_LE(:,6)-EEG_chan_LE(:,10)...
+    EEG_chan_LE(:,10)-EEG_chan_LE(:,12)];
+
+%AR_a - EEG A1-REF and EEG A2-REF not included
+AR_a_chan_config = {'FP1','FP2','F3','F4','C3','C4','P3','P4','O1','O2','F7','F8','T3','T4','T5','T6','FZ','CZ','PZ'};
+filepath_AR_a = strcat('E:\Nanyang Technological University\1. Research\1. Seizure Detection\Database\TUH EEG Corpus\Seizure Corpus\Version_1.3.0\EEGs\v1.3.0\edf\train\03_tcp_ar_a\000\00000006\s004_2007_02_02\00000006_s004_t000');
+[m,n] = edfread([filepath_AR_a,'.edf']);
+Fs_AR_a = m.samples(1,1);
+EEG_chan_AR_a = [n(:,:)]';
+
+% Convert into TCP montage:
+EEG_AR_a_TCP = [EEG_chan_AR_a(:,1)-EEG_chan_AR_a(:,11) EEG_chan_AR_a(:,11)-EEG_chan_AR_a(:,13) EEG_chan_AR_a(:,13)-EEG_chan_AR_a(:,15)...
+    EEG_chan_AR_a(:,15)-EEG_chan_AR_a(:,9) EEG_chan_AR_a(:,2)-EEG_chan_AR_a(:,12) EEG_chan_AR_a(:,12)-EEG_chan_AR_a(:,14)...
+    EEG_chan_AR_a(:,14)-EEG_chan_AR_a(:,16) EEG_chan_AR_a(:,16)-EEG_chan_AR_a(:,10) EEG_chan_AR_a(:,13)-EEG_chan_AR_a(:,5)... 
+    EEG_chan_AR_a(:,5)-EEG_chan_AR_a(:,18) EEG_chan_AR_a(:,18)-EEG_chan_AR_a(:,6) EEG_chan_AR_a(:,6)-EEG_chan_AR_a(:,14)... 
+    EEG_chan_AR_a(:,1)-EEG_chan_AR_a(:,3) EEG_chan_AR_a(:,3)-EEG_chan_AR_a(:,5) EEG_chan_AR_a(:,5)-EEG_chan_AR_a(:,7)...
+    EEG_chan_AR_a(:,7)-EEG_chan_AR_a(:,9) EEG_chan_AR_a(:,2)-EEG_chan_AR_a(:,4) EEG_chan_AR_a(:,4)-EEG_chan_AR_a(:,6)...
+    EEG_chan_AR_a(:,6)-EEG_chan_AR_a(:,8) EEG_chan_AR_a(:,8)-EEG_chan_AR_a(:,10)];
+
+disp('MISSION ACCOMPLISHED');

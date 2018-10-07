@@ -2,13 +2,14 @@ import json
 import csv
 import sys
 
-try:
-    print(sys.argv[1])
+if sys.argv[1] == 'prod':
     cropEnd = True
     fn = 'Temple_University_Hospital_EEG'
-except Exception:
-    cropEnd = False
-    fn = 'test'
+    fileNameCrop = 3
+elif sys.argv[1] == 'test':
+    cropEnd = True
+    fn = 'dev_test'
+    fileNameCrop = 2
 
 
 class Patient:
@@ -44,7 +45,8 @@ class Patient:
 
 
 def processData(fileName):
-    try:
+    # try:
+    if currentPatient != None:
         if currentPatient.count != '0':
             jsonOutput[fileName]["seizure"].append({
                 "id": currentPatient.id,
@@ -63,8 +65,9 @@ def processData(fileName):
                 "info": currentPatient.info,
                 "fileNames": currentPatient.noSeizure
             })
-    except Exception:
-        pass
+        # print(currentPatient.info)
+    # except Exception as e:
+    #     print(e)
 
 
 jsonOutput = {
@@ -93,18 +96,17 @@ with open(f'{fn}.csv', newline='\n') as f:
     firstLine = True
     for row in reader:
         if firstLine:
-            fileName = row[12].split('/')[3]
+            fileName = row[12].split('/')[fileNameCrop]
             firstLine = False
         if row[2]:
             processData(fileName)
-            fileName = row[12].split('/')[3]
+            fileName = row[12].split('/')[fileNameCrop]
             currentPatient = Patient(row[2],
                                      row[11], row[4],  ' | '.join(row[6:8]))
         currentPatient.addSession(
             row[5], row[13], row[14], row[15], row[12].replace('tse', 'edf'))
-    fileName = row[12].split('/')[3]
+    fileName = row[12].split('/')[fileNameCrop]
     processData(fileName)
 
 with open(f'{fn}.json', 'w') as outfile:
     json.dump(jsonOutput, outfile)
-print(Patient.countx)

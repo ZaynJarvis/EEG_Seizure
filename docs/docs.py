@@ -134,3 +134,55 @@ unavailable = \
 ['A1', 'A2', 'ROC', 'LOC', '26', '27', '28', 'PHOTIC-REF']
 ['A1', 'A2', 'ROC', 'LOC', '26', '27', '28', '29', '30', 'PHOTIC-REF']
 ['A1', 'A2', 'ROC', 'LOC', 'EMG-REF', '26', '27', '28', '29', '30', 'PHOTIC-REF']
+
+
+{'EEG FP1-REF': 'FP1', 'EEG FP2-REF': 'FP2', 'EEG F3-REF': 'F3', 'EEG F4-REF': 'F4',
+ 'EEG C3-REF': 'C3', 'EEG C4-REF': 'C4', 'EEG P3-REF': 'P3', 'EEG P4-REF': 'P4',
+ 'EEG O1-REF': 'O1', 'EEG O2-REF': 'O2', 'EEG F7-REF': 'F7', 'EEG F8-REF': 'F8',
+ 'EEG T3-REF': 'T3', 'EEG T4-REF': 'T4', 'EEG T5-REF': 'T5', 'EEG T6-REF': 'T6',
+ 'EEG A1-REF': 'A1', 'EEG A2-REF': 'A2', 'EEG FZ-REF': 'FZ', 'EEG CZ-REF': 'CZ',
+ 'EEG PZ-REF': 'PZ', 'EEG ROC-REF': 'ROC', 'EEG LOC-REF': 'LOC', 'EEG EKG1-REF':
+ 'EKG1', 'EEG 26-REF': '26', 'EEG 27-REF': '27', 'EEG 28-REF': '28',
+ 'EEG 29-REF': '29', 'EEG 30-REF': '30', 'EEG T1-REF': 'T1', 'EEG T2-REF': 'T2',
+ 'STI 014': '014', 'EEG EKG-REF': 'EKG', 'EEG SP1-REF': 'SP1', 'EEG SP2-REF': 'SP2',
+ 'EEG LUC-REF': 'LUC', 'EEG RLC-REF': 'RLC', 'EEG RESP1-REF': 'RESP1', 'EEGRESP2-REF':
+ 'RESP2', 'EEG 31-REF': '31', 'EEG 32-REF': '32', 'EEG C3P-REF': 'C3P', 'EEG C4P-REF':
+ 'C4P', 'EEG OZ-REF': 'OZ', 'ECG EKG-REF': 'EKG',
+    'PULSE RATE': 'RATE', 'EEG FP1-LE': 'FP1', 'EEG FP2-LE': 'FP2', 'EEG F3-LE': 'F3',
+ 'EEG F4-LE': 'F4', 'EEG C3-LE': 'C3', 'EEG C4-LE': 'C4', 'EEG A1-LE': 'A1',
+     'EEG A2-LE': 'A2', 'EEG P3-LE': 'P3', 'EEG P4-LE': 'P4', 'EEG O1-LE': 'O1',
+     'EEG O2-LE': 'O2', 'EEG F7-LE': 'F7', 'EEG F8-LE': 'F8', 'EEG T3-LE': 'T3',
+     'EEG T4-LE': 'T4', 'EEG T5-LE': 'T5', 'EEG T6-LE': 'T6', 'EEG FZ-LE': 'FZ',
+     'EEG CZ-LE': 'CZ', 'EEG PZ-LE': 'PZ', 'EEG OZ-LE': 'OZ', 'EEG PG1-LE': 'PG1',
+     'EEG PG2-LE': 'PG2', 'EEG EKG-LE': 'EKG', 'EEG SP2-LE': 'SP2', 'EEG SP1-LE': 'SP1',
+ 'EEG RLC-LE': 'RLC', 'EEG LUC-LE': 'LUC', 'EEG 30-LE': '30', 'EEG T1-LE': 'T1',
+ 'EEG T2-LE': 'T2', 'EEG 26-LE': '26', 'EEG 27-LE': '27', 'EEG 28-LE': '28',
+ 'EEG 29-LE': '29', 'EEG 31-LE': '31', 'EEG 32-LE': '32', 'PHOTIC PH': 'PH',
+ 'EEG 23-LE': '23', 'EEG 24-LE': '24', 'EEG 20-REF': '20', 'EEG 21-REF': '21',
+ 'EEG 22-REF': '22', 'EEG 23-REF': '23', 'EEG 24-REF': '24', 'EEG 25-REF': '25'}
+
+
+{'EEG FP1-REF': 'FP1', 'EEG FP2-REF': 'FP2', 'EEG F3-REF': 'F3', 'EEG F4-REF': 'F4',
+ 'EEG C3-REF': 'C3', 'EEG C4-REF': 'C4', 'EEG P3-REF': 'P3', 'EEG P4-REF': 'P4',
+ 'EEG O1-REF': 'O1', 'EEG O2-REF': 'O2', 'EEG F7-REF': 'F7', 'EEG F8-REF': 'F8',
+ 'EEG T3-REF': 'T3', 'EEG T4-REF': 'T4', 'EEG T5-REF': 'T5', 'EEG T6-REF': 'T6',
+ 'EEG A1-REF': 'A1', 'EEG A2-REF': 'A2', 'EEG FZ-REF': 'FZ', 'EEG CZ-REF': 'CZ',
+ 'EEG PZ-REF': 'PZ', 'EEG ROC-REF': 'ROC', 'EEG LOC-REF': 'LOC', 'EEG EKG1-REF':
+ 'EKG1', 'EEG 26-REF': '26', 'EEG 27-REF': '27', 'EEG 28-REF': '28',
+ 'EEG 29-REF': '29', 'EEG 30-REF': '30', 'EEG T1-REF': 'T1', 'EEG T2-REF': 'T2',
+ 'STI 014': '014', 'EEG EKG-REF': 'EKG', 'EEG SP1-REF': 'SP1', 'EEG SP2-REF': 'SP2',
+ 'EEG LUC-REF': 'LUC', 'EEG RLC-REF': 'RLC', 'EEG RESP1-REF': 'RESP1', 'EEGRESP2-REF':
+ 'RESP2', 'EEG 31-REF': '31', 'EEG 32-REF': '32', 'EEG C3P-REF': 'C3P', 'EEG C4P-REF':
+ 'C4P', 'EEG OZ-REF': 'OZ', 'ECG EKG-REF': 'EKG',
+    'PULSE RATE': 'RATE', 'EEG FP1-LE': 'FP1', 'EEG FP2-LE': 'FP2', 'EEG F3-LE': 'F3',
+ 'EEG F4-LE': 'F4', 'EEG C3-LE': 'C3', 'EEG C4-LE': 'C4', 'EEG A1-LE': 'A1',
+     'EEG A2-LE': 'A2', 'EEG P3-LE': 'P3', 'EEG P4-LE': 'P4', 'EEG O1-LE': 'O1',
+     'EEG O2-LE': 'O2', 'EEG F7-LE': 'F7', 'EEG F8-LE': 'F8', 'EEG T3-LE': 'T3',
+     'EEG T4-LE': 'T4', 'EEG T5-LE': 'T5', 'EEG T6-LE': 'T6', 'EEG FZ-LE': 'FZ',
+     'EEG CZ-LE': 'CZ', 'EEG PZ-LE': 'PZ', 'EEG OZ-LE': 'OZ', 'EEG PG1-LE': 'PG1',
+     'EEG PG2-LE': 'PG2', 'EEG EKG-LE': 'EKG', 'EEG SP2-LE': 'SP2', 'EEG SP1-LE': 'SP1',
+ 'EEG RLC-LE': 'RLC', 'EEG LUC-LE': 'LUC', 'EEG 30-LE': '30', 'EEG T1-LE': 'T1',
+ 'EEG T2-LE': 'T2', 'EEG 26-LE': '26', 'EEG 27-LE': '27', 'EEG 28-LE': '28',
+ 'EEG 29-LE': '29', 'EEG 31-LE': '31', 'EEG 32-LE': '32', 'PHOTIC PH': 'PH',
+ 'EEG 23-LE': '23', 'EEG 24-LE': '24', 'EEG 20-REF': '20', 'EEG 21-REF': '21',
+ 'EEG 22-REF': '22', 'EEG 23-REF': '23', 'EEG 24-REF': '24', 'EEG 25-REF': '25'}

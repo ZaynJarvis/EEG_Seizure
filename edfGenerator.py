@@ -1,13 +1,15 @@
-import sys
 import pyedflib
-import numpy as np
 import os
 import time
 import json
+import sys
+import numpy as np
+from mne.io import concatenate_raws, read_raw_edf
+from mne import Epochs, pick_types, find_events
 
 path = [
-    # "01_tcp_ar",
-    # "02_tcp_le",
+    "01_tcp_ar",
+    "02_tcp_le",
     "03_tcp_ar_a"
 ]
 
@@ -16,12 +18,16 @@ if len(sys.argv) > 1 and sys.argv[1] == 'prod':
     fn = 'Temple_University_Hospital_EEG'
 else:
     cropEnd = False
-    fn = 'test'
+    fn = 'dev_test'
 
 
 def genFolder(PA):
     for p in PA:
         os.makedirs(f'./gen/train/{p}', exist_ok=True)
+
+
+# result = [P1-F7,  F7-T3,  T3-T5,  T5-O1,  FP2-F8,  F8-T4,  T4-T6,  T6-O2,  T3-C3,  C3 -
+#           CZ,  CZ-C4,  C4-T4,  FP1-F3,  F3-C3,  C3-P3,  P3-O1,  FP2-F4,  F4-C4,  C4-P4, P4-O2]
 
 
 class EDF:
@@ -44,7 +50,9 @@ class EDF:
         #             "/")[-1].replace('edf', 'csv')
         #         np.savetxt(
         #             f'./gen/train/{channel}/{st}/{fileName}', sigbufs.T, delimiter=",")
+        # raw = read_raw_edf(edf, preload=True, stim_channel='auto')
 
+        print(edf)
         edfReader = pyedflib.EdfReader(edf)
         signal_labels = tuple(edfReader.getSignalLabels())
 
@@ -90,13 +98,5 @@ with open(f'{fn}.json') as f:
             for session in p['sessions']:
                 EDF.getEDF(session, session['edf'])
 
-# print(EDF.false)
-# print(len(EDF.false))
-# for i in EDF.false:
-#     print(EDF.sigChan[i])
 with open(f'channels.json', 'w') as outfile:
     json.dump(EDF.sigChan, outfile)
-# x = time.time()
-
-# y = time.time()
-# print(f'The process cost {y-x}s.')

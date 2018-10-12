@@ -4,16 +4,17 @@ import sys
 
 if sys.argv[1] == 'prod':
     cropEnd = True
-    fn = 'Temple_University_Hospital_EEG'
+    fn = 'original_data_manifest/Temple_University_Hospital_EEG'
     fileNameCrop = 3
 elif sys.argv[1] == 'test':
     cropEnd = True
-    fn = 'dev_test'
+    fn = 'original_data_manifest/dev_test'
     fileNameCrop = 2
 
 
 class Patient:
     countx = 0
+    countn = 0
 
     def __init__(self, patientID, count, sessionID, EEG):
         self.count = count
@@ -42,32 +43,38 @@ class Patient:
             self.seizure.append(session)
         else:
             self.noSeizure.append(edf)
+            Patient.countn += 1
 
 
 def processData(fileName):
-    # try:
     if currentPatient != None:
         if currentPatient.count != '0':
             jsonOutput[fileName]["seizure"].append({
-                "id": currentPatient.id,
-                "info": currentPatient.info,
-                "sessions": currentPatient.seizure
+                "id":
+                currentPatient.id,
+                "info":
+                currentPatient.info,
+                "sessions":
+                currentPatient.seizure
             })
             if currentPatient.noSeizure:
                 jsonOutput[fileName]["noSeizure"].append({
-                    "id": currentPatient.id,
-                    "info": currentPatient.info,
-                    "fileNames": currentPatient.noSeizure
+                    "id":
+                    currentPatient.id,
+                    "info":
+                    currentPatient.info,
+                    "fileNames":
+                    currentPatient.noSeizure
                 })
         else:
             jsonOutput[fileName]["noSeizure"].append({
-                "id": currentPatient.id,
-                "info": currentPatient.info,
-                "fileNames": currentPatient.noSeizure
+                "id":
+                currentPatient.id,
+                "info":
+                currentPatient.info,
+                "fileNames":
+                currentPatient.noSeizure
             })
-        # print(currentPatient.info)
-    # except Exception as e:
-    #     print(e)
 
 
 jsonOutput = {
@@ -101,10 +108,10 @@ with open(f'{fn}.csv', newline='\n') as f:
         if row[2]:
             processData(fileName)
             fileName = row[12].split('/')[fileNameCrop]
-            currentPatient = Patient(row[2],
-                                     row[11], row[4],  ' | '.join(row[6:8]))
-        currentPatient.addSession(
-            row[5], row[13], row[14], row[15], row[12].replace('tse', 'edf'))
+            currentPatient = Patient(row[2], row[11], row[4],
+                                     ' | '.join(row[6:8]))
+        currentPatient.addSession(row[5], row[13], row[14], row[15],
+                                  row[12].replace('tse', 'edf'))
     fileName = row[12].split('/')[fileNameCrop]
     processData(fileName)
 

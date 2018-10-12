@@ -186,3 +186,26 @@ unavailable = \
  'EEG 29-LE': '29', 'EEG 31-LE': '31', 'EEG 32-LE': '32', 'PHOTIC PH': 'PH',
  'EEG 23-LE': '23', 'EEG 24-LE': '24', 'EEG 20-REF': '20', 'EEG 21-REF': '21',
  'EEG 22-REF': '22', 'EEG 23-REF': '23', 'EEG 24-REF': '24', 'EEG 25-REF': '25'}
+
+
+# train
+# -- seizure --
+distribution: {256.0: 117, 400.0: 127, 250.0: 165, 512.0: 3}
+count: 412
+# -- no seizure --
+distribution: {250.0: 440, 400.0: 242, 256.0: 852, 512.0: 41}
+count: 1575
+# -- total --
+distribution: {256.0: 852, 400.0: 242, 250.0: 440, 512.0: 41}
+count: 1987
+
+# test
+# -- seizure --
+distribution: {250.0: 42, 256.0: 209, 400.0: 33}
+count: 284
+# -- no seizure --
+distribution: {400.0: 55, 250.0: 97, 512.0: 35, 256.0: 542}
+count: 729
+# -- total --
+distribution: {250.0: 97, 256.0: 542, 400.0: 55, 512.0: 35}
+count: 1013

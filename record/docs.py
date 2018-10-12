@@ -209,3 +209,19 @@ count: 729
 # -- total --
 distribution: {250.0: 97, 256.0: 542, 400.0: 55, 512.0: 35}
 count: 1013
+
+256.0 HZ: 852 samples, 400.0 HZ: 242 samples, 250.0 HZ: 440 samples, 512.0 HZ: 41 samples
+250.0 Hz: 97 samples, 256.0 Hz: 542 samples, 400.0 Hz: 55 samples, 512.0 Hz: 35 samples
+
+{'1052': {'MEDICATIONS: Depakote and Topiramate.\nINTRODUCTION'},
+ '10584': {'Adult female with MRSA pneumonia, sepsis, decline '},
+ '2427': {'INTRODUCTION: Long-term video EEG monitoring is pe'},
+ '2500': {'This is a 16-month-old with new gait disorder and '},
+ '287': {'This is a __-year-old male admitted with the diagn'},
+ '3884': {'\tForty-seven-year-old male with recurrent encephal'},
+ '5346': {'Mixed edema, coma, now a new EEG pattern and seizu'},
+ '7555': {'\nMEDICATIONS:  Keppra.\nINTRODUCTION:  This continu'},
+ '7952': {'MEDICATIONS: Keppra, At1van, Aricept and others\nHI'},
+ '9231': {'Adult female with advanced dementia, schizophrenia'},
+ '9455': {'Cirrhosis, stroke, new onset seizures.\nMEDICATIONS'},
+ '9902': {'REASON FOR STUDY:  Seizures.\nINTRODUCTION:  Digita'}}

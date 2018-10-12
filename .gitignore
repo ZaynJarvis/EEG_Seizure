@@ -1,7 +1,7 @@
 trainSet/
-ConstrcutedTrainSet/
-ContructedTestSet/
 testSet/
+strainSet/
+stestSet/
 edf/
 gen/
 .ipynb_checkpoints/

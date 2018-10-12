@@ -24,13 +24,24 @@ with open(f'{db}.json') as f:
         for p in Spatients:
             for session in p['sessions']:
                 manifest = DataManifest(session["edf"].split("/")[-1],
-                                        session['seizure']['seizureType'])
+                                        session['seizure']['seizureType'],
+                                        p['info']['age'], p['info']['gender'])
+                seizureDuration = str(
+                    float(session['seizure']['stop']) -
+                    float(session['seizure']['start'])) + 's'
 
-                edfRecord = EDF(session['edf'])
+                for i in range(
+                        int((float(session['seizure']['stop']) - float(
+                            session['seizure']['start'])) // 5)):
+                    edfRecord = EDF(session['edf'])
+                    edfRecord.loadData(
+                        str(float(session['seizure']['start']) + 5 * i),
+                        str(float(session['seizure']['start']) + 5 * (i + 1)))
+                    manifest.seg = i + 1
+                    manifest.seizureDuration = seizureDuration
+                    manifest.freq = edfRecord.updateFreqRecord()
+                    manifest.generateRecord()
+                    manifest.writeToManifest()
 
-                manifest.freq = edfRecord.updateFreqRecord()
-                manifest.writeToManifest()
-                edfRecord.loadData(session['seizure']['start'],
-                                   session['seizure']['stop'])
-                edfRecord.saveFile(edfRecord.montageConversion(),
-                                   manifest.fileName)
+                    edfRecord.saveFile(edfRecord.montageConversion(),
+                                       manifest.fileName)

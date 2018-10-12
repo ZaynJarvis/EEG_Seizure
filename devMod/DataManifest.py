@@ -4,8 +4,9 @@ import os
 
 class DataManifest:
     fieldnames = [
-        'index', 'patientID', 'sessionID', 'fileID', 'originalFreq',
-        'sampleFreq', 'seizureType', 'fileName'
+        'index', 'patientID', 'age', 'gender', 'sessionID', 'fileID',
+        'segment', 'originalFreq', 'sampleFreq', 'seizureDuration',
+        'seizureType', 'fileName'
     ]
     index = 0
 
@@ -23,15 +24,18 @@ class DataManifest:
                 csvfile, fieldnames=DataManifest.fieldnames)
             writer.writeheader()
 
-    def __init__(self, fileName, seizureType):
+    def __init__(self, fileName, seizureType, age, gender):
         DataManifest.index += 1
+        self.age = age
+        self.gender = gender
         self.ogFile = fileName
         self.seizureType = seizureType
+        self.seizureDuration = 0
+
         os.makedirs(
             f'./{DataManifest.dirName}/{self.seizureType}', exist_ok=True)
         self.sessionCount = DataManifest.fileList.get(self.ogFile, 0) + 1
         DataManifest.fileList[self.ogFile] = self.sessionCount
-        self.generateRecord()
 
     def generateRecord(self):
         patientID, sessionID, fileID = \
@@ -43,17 +47,21 @@ class DataManifest:
         self.fileName = f'./{DataManifest.dirName}/{self.seizureType}/' + '_'.join(
             [
                 patientID, sessionID, fileID, '_se' + str(self.sessionCount),
-                'raw.fif'
+                '_sg' + str(self.seg), 'raw.fif'
             ])
 
     def buildDict(self):
         return {
             'index': DataManifest.index,
+            'age': self.age,
+            'gender': self.gender,
             'patientID': self.patientID,
             'sessionID': self.sessionID,
             'fileID': self.fileID,
             'originalFreq': self.freq,
-            'sampleFreq': 128,
+            'sampleFreq': 128.0,
+            'seizureDuration': self.seizureDuration,
+            'segment': self.seg,
             'seizureType': self.seizureType,
             'fileName': self.fileName
         }

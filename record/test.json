@@ -1,0 +1,120 @@
+{
+  "01_tcp_ar": {
+    "seizure": [
+      {
+        "id": "492",
+        "info": {
+          "EEG": "ICU | Unknown",
+          "sessionID": "s003",
+          "seizureCount": "2"
+        },
+        "sessions": [
+          {
+            "fileName": "t000",
+            "edf": "./edf/train/01_tcp_ar/004/00000492/s003_2003_07_18/00000492_s003_t000.edf",
+            "seizure": {
+              "start": "6.2825",
+              "stop": "35.8875",
+              "seizureType": "GNSZ"
+            }
+          },
+          {
+            "fileName": "t002",
+            "edf": "./edf/train/01_tcp_ar/004/00000492/s003_2003_07_18/00000492_s003_t002.edf",
+            "seizure": {
+              "start": "9.7925",
+              "stop": "29.125",
+              "seizureType": "GNSZ"
+            }
+          }
+        ]
+      }
+    ],
+    "noSeizure": []
+  },
+  "02_tcp_le": {
+    "seizure": [
+      {
+        "id": "492",
+        "info": {
+          "EEG": "ICU | SICU",
+          "sessionID": "s001",
+          "seizureCount": "1"
+        },
+        "sessions": [
+          {
+            "fileName": "t001",
+            "edf": "./edf/train/02_tcp_le/004/00000492/s001_2003_07_15/00000492_s001_t001.edf",
+            "seizure": {
+              "start": "121.496",
+              "stop": "138.336",
+              "seizureType": "GNSZ"
+            }
+          }
+        ]
+      }
+    ],
+    "noSeizure": []
+  },
+  "03_tcp_ar_a": {
+    "seizure": [
+      {
+        "id": "883",
+        "info": {
+          "EEG": "Inpatient | General",
+          "sessionID": "s012",
+          "seizureCount": "3"
+        },
+        "sessions": [
+          {
+            "fileName": "t000",
+            "edf": "./edf/train/03_tcp_ar_a/008/00000883/s012_2010_09_13/00000883_s012_t000.edf",
+            "seizure": {
+              "start": "73.0775",
+              "stop": "147.3325",
+              "seizureType": "CPSZ"
+            }
+          },
+          {
+            "fileName": "t001",
+            "edf": "./edf/train/03_tcp_ar_a/008/00000883/s012_2010_09_13/00000883_s012_t001.edf",
+            "seizure": {
+              "start": "69.0725",
+              "stop": "94.0325",
+              "seizureType": "CPSZ"
+            }
+          },
+          {
+            "fileName": "t003",
+            "edf": "./edf/train/03_tcp_ar_a/008/00000883/s012_2010_09_13/00000883_s012_t003.edf",
+            "seizure": {
+              "start": "34.015",
+              "stop": "110.0175",
+              "seizureType": "FNSZ"
+            }
+          }
+        ]
+      },
+      {
+        "id": "975",
+        "info": {
+          "EEG": "Unknown | Unknown",
+          "sessionID": "s003",
+          "seizureCount": "1"
+        },
+        "sessions": [
+          {
+            "fileName": "t006",
+            "edf": "./edf/train/03_tcp_ar_a/009/00000975/s003_2004_10_19/00000975_s003_t006.edf",
+            "seizure": {
+              "start": "54.02",
+              "stop": "80.4575",
+              "seizureType": "GNSZ"
+            }
+          }
+        ]
+      }
+    ],
+    "noSeizure": []
+  }
+}

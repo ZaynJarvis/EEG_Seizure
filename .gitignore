@@ -1,5 +1,5 @@
-trainSet/
-testSet/
+trainSet*
+testSet*
 strainSet/
 stestSet/
 edf/

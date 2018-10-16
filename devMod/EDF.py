@@ -21,10 +21,13 @@ class EDF:
     def __init__(self, edf):
         self.raw = read_raw_edf(edf, preload=False, stim_channel=None)
         self.raw.rename_channels(mapping=self.changeChannel())
-        self.updateFreqRecord()
+        self.ofreq = self.updateFreqRecord()
 
     def __del__(self):
         self.raw.close()
+    
+    def duration(self):
+        return self.raw.n_times / self.raw.info['sfreq']
 
     def loadData(self, start, stop):
         self.raw = self.raw.crop(tmin=float(start), tmax=float(stop))
@@ -100,8 +103,8 @@ class EDF:
         return ch
 
     def updateFreqRecord(self):
-        EDF.sigFreq[self.raw.info['sfreq']] = EDF.sigFreq.get(
-            self.raw.info['sfreq'], 0) + 1
+        # EDF.sigFreq[self.raw.info['sfreq']] = EDF.sigFreq.get(
+        #     self.raw.info['sfreq'], 0) + 1
         return self.raw.info['sfreq']
 
     def saveFile(self, rawData, fileName):

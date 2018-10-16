@@ -25,7 +25,6 @@ class DataManifest:
             writer.writeheader()
 
     def __init__(self, fileName, seizureType, age, gender):
-        DataManifest.index += 1
         self.age = age
         self.gender = gender
         self.ogFile = fileName
@@ -38,6 +37,7 @@ class DataManifest:
         DataManifest.fileList[self.ogFile] = self.sessionCount
 
     def generateRecord(self):
+        DataManifest.index += 1
         patientID, sessionID, fileID = \
             self.ogFile.split('.')[0].split('_')
 
@@ -46,8 +46,8 @@ class DataManifest:
         self.fileID = 't' + str(int(fileID[1:]))
         self.fileName = f'./{DataManifest.dirName}/{self.seizureType}/' + '_'.join(
             [
-                patientID, sessionID, fileID, '_se' + str(self.sessionCount),
-                '_sg' + str(self.seg), 'raw.fif'
+                self.patientID, self.sessionID, self.fileID, '_se' + str(
+                    self.sessionCount), '_sg' + str(self.seg), 'raw.fif'
             ])
 
     def buildDict(self):

@@ -1,3 +1,4 @@
+import os
 import sys
 import json
 from itertools import chain
@@ -35,9 +36,19 @@ def noseizureExtraction(patient):
                                manifest.fileName)
 
 
-with open(f'{db}.json') as f:
-    data = json.load(f)
-    for channel in path:
-        patients = data[channel]['noSeizure']
-        for patient in patients:
-            noseizureExtraction(patient)
+def main():
+    with open(f'{db}.json') as f:
+        data = json.load(f)
+        os.makedirs(f'./{DataManifest.dirName}', exist_ok=True)
+        for channel in path:
+            patients = data[channel]['noSeizure']
+            for patient in patients:
+                noseizureExtraction(patient)
+
+
+import time
+start_time = time.time()
+main()
+print("--- %s seconds ---" % (time.time() - start_time))
+
+print("count: " + str(DataManifest.index))

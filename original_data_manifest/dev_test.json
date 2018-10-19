@@ -131,7 +131,7 @@
                 "id": "4671",
                 "info": {
                     "age": "27",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s007",
                     "seizureCount": "39"
@@ -494,7 +494,7 @@
                 "id": "5479",
                 "info": {
                     "age": "48",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Inpatient | General",
                     "sessionID": "s003",
                     "seizureCount": "2"
@@ -524,7 +524,7 @@
                 "id": "5479",
                 "info": {
                     "age": "48",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Inpatient | General",
                     "sessionID": "s004",
                     "seizureCount": "5"
@@ -1322,7 +1322,7 @@
                 "id": "6986",
                 "info": {
                     "age": "47",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Inpatient | General",
                     "sessionID": "s001",
                     "seizureCount": "1"
@@ -1631,7 +1631,7 @@
                 "id": "8479",
                 "info": {
                     "age": "59",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | RICU",
                     "sessionID": "s001",
                     "seizureCount": "10"
@@ -1733,7 +1733,7 @@
                 "id": "8479",
                 "info": {
                     "age": "59",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | RICU",
                     "sessionID": "s002",
                     "seizureCount": "17"
@@ -1898,7 +1898,7 @@
                 "id": "8479",
                 "info": {
                     "age": "59",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | RICU",
                     "sessionID": "s003",
                     "seizureCount": "3"
@@ -3446,7 +3446,7 @@
                 "id": "9570",
                 "info": {
                     "age": "62",
-                    "gender": "gentleman",
+                    "gender": "male",
                     "EEG": "EMU | EMU",
                     "sessionID": "s001",
                     "seizureCount": "4"
@@ -3457,7 +3457,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s003",
                     "seizureCount": "1"
@@ -3478,7 +3478,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s004",
                     "seizureCount": "3"
@@ -3517,7 +3517,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s005",
                     "seizureCount": "1"
@@ -3538,7 +3538,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s006",
                     "seizureCount": "1"
@@ -3559,7 +3559,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s011",
                     "seizureCount": "5"
@@ -3616,7 +3616,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s015",
                     "seizureCount": "1"
@@ -3637,7 +3637,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s017",
                     "seizureCount": "1"
@@ -3658,7 +3658,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s018",
                     "seizureCount": "1"
@@ -3679,7 +3679,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s021",
                     "seizureCount": "1"
@@ -3700,7 +3700,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s029",
                     "seizureCount": "15"
@@ -3847,7 +3847,7 @@
                 "id": "9697",
                 "info": {
                     "age": "19",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | NICU",
                     "sessionID": "s002",
                     "seizureCount": "2"
@@ -3877,7 +3877,7 @@
                 "id": "9697",
                 "info": {
                     "age": "19",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | NICU",
                     "sessionID": "s003",
                     "seizureCount": "10"
@@ -3979,7 +3979,7 @@
                 "id": "9697",
                 "info": {
                     "age": "19",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | NICU",
                     "sessionID": "s005",
                     "seizureCount": "3"
@@ -4018,7 +4018,7 @@
                 "id": "9839",
                 "info": {
                     "age": "64",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s004",
                     "seizureCount": "4"
@@ -4066,7 +4066,7 @@
                 "id": "9839",
                 "info": {
                     "age": "64",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s005",
                     "seizureCount": "34"
@@ -4384,7 +4384,7 @@
                 "id": "9839",
                 "info": {
                     "age": "64",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s007",
                     "seizureCount": "6"
@@ -4450,7 +4450,7 @@
                 "id": "9842",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s001",
                     "seizureCount": "9"
@@ -4543,7 +4543,7 @@
                 "id": "9842",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s002",
                     "seizureCount": "19"
@@ -4726,7 +4726,7 @@
                 "id": "9866",
                 "info": {
                     "age": "40",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "EMU | EMU",
                     "sessionID": "s002",
                     "seizureCount": "2"
@@ -4756,7 +4756,7 @@
                 "id": "9866",
                 "info": {
                     "age": "40",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "EMU | EMU",
                     "sessionID": "s003",
                     "seizureCount": "41"
@@ -5137,7 +5137,7 @@
                 "id": "10022",
                 "info": {
                     "age": "58",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s001",
                     "seizureCount": "6"
@@ -5203,7 +5203,7 @@
                 "id": "10022",
                 "info": {
                     "age": "58",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s003",
                     "seizureCount": "4"
@@ -5251,7 +5251,7 @@
                 "id": "10022",
                 "info": {
                     "age": "58",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s004",
                     "seizureCount": "1"
@@ -5272,7 +5272,7 @@
                 "id": "10022",
                 "info": {
                     "age": "58",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s005",
                     "seizureCount": "1"
@@ -5293,7 +5293,7 @@
                 "id": "10062",
                 "info": {
                     "age": "39",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | RICU",
                     "sessionID": "s001",
                     "seizureCount": "1"
@@ -5314,7 +5314,7 @@
                 "id": "10062",
                 "info": {
                     "age": "39",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | RICU",
                     "sessionID": "s002",
                     "seizureCount": "1"
@@ -5335,7 +5335,7 @@
                 "id": "10062",
                 "info": {
                     "age": "39",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | RICU",
                     "sessionID": "s003",
                     "seizureCount": "3"
@@ -5374,7 +5374,7 @@
                 "id": "10062",
                 "info": {
                     "age": "39",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | RICU",
                     "sessionID": "s004",
                     "seizureCount": "12"
@@ -5494,7 +5494,7 @@
                 "id": "10062",
                 "info": {
                     "age": "39",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | RICU",
                     "sessionID": "s005",
                     "seizureCount": "2"
@@ -5524,7 +5524,7 @@
                 "id": "10062",
                 "info": {
                     "age": "39",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | RICU",
                     "sessionID": "s006",
                     "seizureCount": "7"
@@ -5599,7 +5599,7 @@
                 "id": "10062",
                 "info": {
                     "age": "39",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | RICU",
                     "sessionID": "s007",
                     "seizureCount": "3"
@@ -5638,7 +5638,7 @@
                 "id": "10062",
                 "info": {
                     "age": "39",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | RICU",
                     "sessionID": "s008",
                     "seizureCount": "3"
@@ -5794,7 +5794,7 @@
                 "id": "10547",
                 "info": {
                     "age": "55",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Inpatient | General",
                     "sessionID": "s001",
                     "seizureCount": "1"
@@ -5815,7 +5815,7 @@
                 "id": "10639",
                 "info": {
                     "age": "61",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | CICU",
                     "sessionID": "s003",
                     "seizureCount": "8"
@@ -5899,7 +5899,7 @@
                 "id": "10639",
                 "info": {
                     "age": "61",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | CICU",
                     "sessionID": "s004",
                     "seizureCount": "10"
@@ -6001,7 +6001,7 @@
                 "id": "10861",
                 "info": {
                     "age": "57",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "EMU | EMU",
                     "sessionID": "s001",
                     "seizureCount": "3"
@@ -6055,7 +6055,7 @@
                 "id": "629",
                 "info": {
                     "age": "22",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Inpatient | General",
                     "sessionID": "s003",
                     "seizureCount": "0"
@@ -6068,7 +6068,7 @@
                 "id": "629",
                 "info": {
                     "age": "22",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Inpatient | General",
                     "sessionID": "s004",
                     "seizureCount": "0"
@@ -6111,7 +6111,7 @@
                 "id": "1278",
                 "info": {
                     "age": "33",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s002",
                     "seizureCount": "0"
@@ -6259,7 +6259,7 @@
                 "id": "4594",
                 "info": {
                     "age": "59",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Outpatient | Outpatient",
                     "sessionID": "s003",
                     "seizureCount": "0"
@@ -6272,7 +6272,7 @@
                 "id": "4594",
                 "info": {
                     "age": "59",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s004",
                     "seizureCount": "0"
@@ -6285,7 +6285,7 @@
                 "id": "4671",
                 "info": {
                     "age": "27",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Outpatient | Outpatient",
                     "sessionID": "s006",
                     "seizureCount": "0"
@@ -6298,7 +6298,7 @@
                 "id": "4671",
                 "info": {
                     "age": "27",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s008",
                     "seizureCount": "0"
@@ -6311,7 +6311,7 @@
                 "id": "4671",
                 "info": {
                     "age": "27",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s009",
                     "seizureCount": "0"
@@ -6325,7 +6325,7 @@
                 "id": "4671",
                 "info": {
                     "age": "27",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "EMU | EMU",
                     "sessionID": "s010",
                     "seizureCount": "0"
@@ -6338,7 +6338,7 @@
                 "id": "4671",
                 "info": {
                     "age": "27",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "EMU | EMU",
                     "sessionID": "s011",
                     "seizureCount": "0"
@@ -6374,7 +6374,7 @@
                 "id": "5479",
                 "info": {
                     "age": "48",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Inpatient | General",
                     "sessionID": "s007",
                     "seizureCount": "0"
@@ -6573,7 +6573,7 @@
                 "id": "6900",
                 "info": {
                     "age": "31",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Outpatient | Outpatient",
                     "sessionID": "s001",
                     "seizureCount": "0"
@@ -6586,7 +6586,7 @@
                 "id": "6900",
                 "info": {
                     "age": "31",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s003",
                     "seizureCount": "0"
@@ -6599,7 +6599,7 @@
                 "id": "6986",
                 "info": {
                     "age": "47",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Inpatient | General",
                     "sessionID": "s001",
                     "seizureCount": "1"
@@ -6612,7 +6612,7 @@
                 "id": "6986",
                 "info": {
                     "age": "47",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Outpatient | Outpatient",
                     "sessionID": "s003",
                     "seizureCount": "0"
@@ -6625,7 +6625,7 @@
                 "id": "7633",
                 "info": {
                     "age": "42",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Outpatient | Outpatient",
                     "sessionID": "s001",
                     "seizureCount": "0"
@@ -6638,7 +6638,7 @@
                 "id": "7633",
                 "info": {
                     "age": "42",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "EMU | EMU",
                     "sessionID": "s002",
                     "seizureCount": "0"
@@ -6651,7 +6651,7 @@
                 "id": "7633",
                 "info": {
                     "age": "42",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "EMU | EMU",
                     "sessionID": "s003",
                     "seizureCount": "0"
@@ -6675,7 +6675,7 @@
                 "id": "7633",
                 "info": {
                     "age": "42",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "EMU | EMU",
                     "sessionID": "s004",
                     "seizureCount": "0"
@@ -6971,7 +6971,7 @@
                 "id": "8479",
                 "info": {
                     "age": "59",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | RICU",
                     "sessionID": "s002",
                     "seizureCount": "17"
@@ -6984,7 +6984,7 @@
                 "id": "8479",
                 "info": {
                     "age": "59",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | RICU",
                     "sessionID": "s003",
                     "seizureCount": "3"
@@ -6998,7 +6998,7 @@
                 "id": "8479",
                 "info": {
                     "age": "59",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | RICU",
                     "sessionID": "s004",
                     "seizureCount": "0"
@@ -7240,7 +7240,7 @@
                 "id": "8550",
                 "info": {
                     "age": "66",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | RICU",
                     "sessionID": "s002",
                     "seizureCount": "0"
@@ -7321,7 +7321,7 @@
                 "id": "9570",
                 "info": {
                     "age": "62",
-                    "gender": "gentleman",
+                    "gender": "male",
                     "EEG": "EMU | EMU",
                     "sessionID": "s001",
                     "seizureCount": "4"
@@ -7334,7 +7334,7 @@
                 "id": "9570",
                 "info": {
                     "age": "62",
-                    "gender": "gentleman",
+                    "gender": "male",
                     "EEG": "EMU | EMU",
                     "sessionID": "s002",
                     "seizureCount": "0"
@@ -7358,7 +7358,7 @@
                 "id": "9570",
                 "info": {
                     "age": "62",
-                    "gender": "gentleman",
+                    "gender": "male",
                     "EEG": "EMU | EMU",
                     "sessionID": "s003",
                     "seizureCount": "0"
@@ -7378,7 +7378,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s001",
                     "seizureCount": "0"
@@ -7391,7 +7391,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s002",
                     "seizureCount": "0"
@@ -7406,7 +7406,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s003",
                     "seizureCount": "1"
@@ -7420,7 +7420,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s004",
                     "seizureCount": "3"
@@ -7436,7 +7436,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s006",
                     "seizureCount": "1"
@@ -7459,7 +7459,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s008",
                     "seizureCount": "0"
@@ -7482,7 +7482,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s009",
                     "seizureCount": "0"
@@ -7495,7 +7495,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s010",
                     "seizureCount": "0"
@@ -7508,7 +7508,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s011",
                     "seizureCount": "5"
@@ -7526,7 +7526,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s012",
                     "seizureCount": "0"
@@ -7549,7 +7549,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s015",
                     "seizureCount": "1"
@@ -7566,7 +7566,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s017",
                     "seizureCount": "1"
@@ -7584,7 +7584,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s018",
                     "seizureCount": "1"
@@ -7602,7 +7602,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s019",
                     "seizureCount": "0"
@@ -7619,7 +7619,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s020",
                     "seizureCount": "0"
@@ -7639,7 +7639,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s021",
                     "seizureCount": "1"
@@ -7652,7 +7652,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s022",
                     "seizureCount": "0"
@@ -7665,7 +7665,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s023",
                     "seizureCount": "0"
@@ -7680,7 +7680,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s024",
                     "seizureCount": "0"
@@ -7693,7 +7693,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s025",
                     "seizureCount": "0"
@@ -7712,7 +7712,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s026",
                     "seizureCount": "0"
@@ -7734,7 +7734,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "EMU | EMU",
                     "sessionID": "s027",
                     "seizureCount": "0"
@@ -7757,7 +7757,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s028",
                     "seizureCount": "0"
@@ -7779,7 +7779,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s029",
                     "seizureCount": "15"
@@ -7793,7 +7793,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "EMU | EMU",
                     "sessionID": "s030",
                     "seizureCount": "0"
@@ -7811,7 +7811,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "EMU | EMU",
                     "sessionID": "s031",
                     "seizureCount": "0"
@@ -7834,7 +7834,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "EMU | EMU",
                     "sessionID": "s032",
                     "seizureCount": "0"
@@ -7857,7 +7857,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s033",
                     "seizureCount": "0"
@@ -7880,7 +7880,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s034",
                     "seizureCount": "0"
@@ -7903,7 +7903,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s035",
                     "seizureCount": "0"
@@ -7925,7 +7925,7 @@
                 "id": "9578",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s037",
                     "seizureCount": "0"
@@ -7944,7 +7944,7 @@
                 "id": "9697",
                 "info": {
                     "age": "19",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Outpatient | Outpatient",
                     "sessionID": "s001",
                     "seizureCount": "0"
@@ -7957,7 +7957,7 @@
                 "id": "9697",
                 "info": {
                     "age": "19",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | NICU",
                     "sessionID": "s003",
                     "seizureCount": "10"
@@ -7971,7 +7971,7 @@
                 "id": "9697",
                 "info": {
                     "age": "19",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | NICU",
                     "sessionID": "s004",
                     "seizureCount": "0"
@@ -7984,7 +7984,7 @@
                 "id": "9697",
                 "info": {
                     "age": "19",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | NICU",
                     "sessionID": "s005",
                     "seizureCount": "3"
@@ -8006,7 +8006,7 @@
                 "id": "9697",
                 "info": {
                     "age": "19",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | NICU",
                     "sessionID": "s006",
                     "seizureCount": "0"
@@ -8029,7 +8029,7 @@
                 "id": "9839",
                 "info": {
                     "age": "64",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s001",
                     "seizureCount": "0"
@@ -8043,7 +8043,7 @@
                 "id": "9839",
                 "info": {
                     "age": "64",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s002",
                     "seizureCount": "0"
@@ -8056,7 +8056,7 @@
                 "id": "9839",
                 "info": {
                     "age": "64",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s003",
                     "seizureCount": "0"
@@ -8069,7 +8069,7 @@
                 "id": "9839",
                 "info": {
                     "age": "64",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s005",
                     "seizureCount": "34"
@@ -8086,7 +8086,7 @@
                 "id": "9839",
                 "info": {
                     "age": "64",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s007",
                     "seizureCount": "6"
@@ -8106,7 +8106,7 @@
                 "id": "9839",
                 "info": {
                     "age": "64",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s008",
                     "seizureCount": "0"
@@ -8127,7 +8127,7 @@
                 "id": "9839",
                 "info": {
                     "age": "64",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NSICU",
                     "sessionID": "s009",
                     "seizureCount": "0"
@@ -8140,7 +8140,7 @@
                 "id": "9839",
                 "info": {
                     "age": "64",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NSICU",
                     "sessionID": "s010",
                     "seizureCount": "0"
@@ -8153,7 +8153,7 @@
                 "id": "9839",
                 "info": {
                     "age": "64",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NSICU",
                     "sessionID": "s011",
                     "seizureCount": "0"
@@ -8174,7 +8174,7 @@
                 "id": "9842",
                 "info": {
                     "age": "25",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Inpatient | General",
                     "sessionID": "s002",
                     "seizureCount": "19"
@@ -8188,7 +8188,7 @@
                 "id": "9866",
                 "info": {
                     "age": "40",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Outpatient | Outpatient",
                     "sessionID": "s001",
                     "seizureCount": "0"
@@ -8201,7 +8201,7 @@
                 "id": "9866",
                 "info": {
                     "age": "40",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "EMU | EMU",
                     "sessionID": "s003",
                     "seizureCount": "41"
@@ -8215,7 +8215,7 @@
                 "id": "9866",
                 "info": {
                     "age": "40",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "EMU | EMU",
                     "sessionID": "s004",
                     "seizureCount": "0"
@@ -8238,7 +8238,7 @@
                 "id": "9866",
                 "info": {
                     "age": "40",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s005",
                     "seizureCount": "0"
@@ -8251,7 +8251,7 @@
                 "id": "10022",
                 "info": {
                     "age": "58",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s002",
                     "seizureCount": "0"
@@ -8269,7 +8269,7 @@
                 "id": "10022",
                 "info": {
                     "age": "58",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s003",
                     "seizureCount": "4"
@@ -8292,7 +8292,7 @@
                 "id": "10022",
                 "info": {
                     "age": "58",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s004",
                     "seizureCount": "1"
@@ -8315,7 +8315,7 @@
                 "id": "10022",
                 "info": {
                     "age": "58",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s005",
                     "seizureCount": "1"
@@ -8336,7 +8336,7 @@
                 "id": "10022",
                 "info": {
                     "age": "58",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s006",
                     "seizureCount": "0"
@@ -8351,7 +8351,7 @@
                 "id": "10062",
                 "info": {
                     "age": "39",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | RICU",
                     "sessionID": "s003",
                     "seizureCount": "3"
@@ -8364,7 +8364,7 @@
                 "id": "10062",
                 "info": {
                     "age": "39",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | RICU",
                     "sessionID": "s007",
                     "seizureCount": "3"
@@ -8378,7 +8378,7 @@
                 "id": "10062",
                 "info": {
                     "age": "39",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | RICU",
                     "sessionID": "s008",
                     "seizureCount": "3"
@@ -8393,7 +8393,7 @@
                 "id": "10062",
                 "info": {
                     "age": "39",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | RICU",
                     "sessionID": "s009",
                     "seizureCount": "0"
@@ -8451,7 +8451,7 @@
                 "id": "10639",
                 "info": {
                     "age": "61",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Inpatient | General",
                     "sessionID": "s001",
                     "seizureCount": "0"
@@ -8464,7 +8464,7 @@
                 "id": "10639",
                 "info": {
                     "age": "61",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s002",
                     "seizureCount": "0"
@@ -8477,7 +8477,7 @@
                 "id": "10639",
                 "info": {
                     "age": "61",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | CICU",
                     "sessionID": "s006",
                     "seizureCount": "0"
@@ -8490,7 +8490,7 @@
                 "id": "10639",
                 "info": {
                     "age": "61",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | CICU",
                     "sessionID": "s008",
                     "seizureCount": "0"
@@ -8913,7 +8913,7 @@
                 "id": "1770",
                 "info": {
                     "age": "23",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s003",
                     "seizureCount": "1"
@@ -9048,7 +9048,7 @@
                 "id": "2297",
                 "info": {
                     "age": "66",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Inpatient | General",
                     "sessionID": "s002",
                     "seizureCount": "9"
@@ -9276,7 +9276,7 @@
                 "id": "4087",
                 "info": {
                     "age": "58",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Outpatient | Outpatient",
                     "sessionID": "s001",
                     "seizureCount": "1"
@@ -9336,7 +9336,7 @@
                 "id": "5213",
                 "info": {
                     "age": "55",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Outpatient | Outpatient",
                     "sessionID": "s001",
                     "seizureCount": "1"
@@ -9357,7 +9357,7 @@
                 "id": "5625",
                 "info": {
                     "age": "33",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "EMU | EMU",
                     "sessionID": "s002",
                     "seizureCount": "2"
@@ -9500,7 +9500,7 @@
                 "id": "629",
                 "info": {
                     "age": "22",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Inpatient | General",
                     "sessionID": "s001",
                     "seizureCount": "0"
@@ -9528,7 +9528,7 @@
                 "id": "1278",
                 "info": {
                     "age": "33",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s001",
                     "seizureCount": "0"
@@ -9541,7 +9541,7 @@
                 "id": "1640",
                 "info": {
                     "age": "35",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s001",
                     "seizureCount": "0"
@@ -9554,7 +9554,7 @@
                 "id": "1770",
                 "info": {
                     "age": "23",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Outpatient | Outpatient",
                     "sessionID": "s001",
                     "seizureCount": "0"
@@ -9568,7 +9568,7 @@
                 "id": "1770",
                 "info": {
                     "age": "23",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Unknown | Unknown",
                     "sessionID": "s002",
                     "seizureCount": "0"
@@ -9634,7 +9634,7 @@
                 "id": "2297",
                 "info": {
                     "age": "66",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | RICU",
                     "sessionID": "s001",
                     "seizureCount": "0"
@@ -9647,7 +9647,7 @@
                 "id": "4087",
                 "info": {
                     "age": "58",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Inpatient | General",
                     "sessionID": "s002",
                     "seizureCount": "0"
@@ -9675,7 +9675,7 @@
                 "id": "4594",
                 "info": {
                     "age": "59",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | NSICU",
                     "sessionID": "s001",
                     "seizureCount": "0"
@@ -9688,7 +9688,7 @@
                 "id": "4594",
                 "info": {
                     "age": "59",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Outpatient | Outpatient",
                     "sessionID": "s002",
                     "seizureCount": "0"
@@ -9701,7 +9701,7 @@
                 "id": "4671",
                 "info": {
                     "age": "27",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "ICU | NICU",
                     "sessionID": "s001",
                     "seizureCount": "0"
@@ -9714,7 +9714,7 @@
                 "id": "4671",
                 "info": {
                     "age": "27",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Outpatient | Outpatient",
                     "sessionID": "s002",
                     "seizureCount": "0"
@@ -9727,7 +9727,7 @@
                 "id": "4671",
                 "info": {
                     "age": "27",
-                    "gender": "man",
+                    "gender": "male",
                     "EEG": "Outpatient | Outpatient",
                     "sessionID": "s005",
                     "seizureCount": "0"
@@ -9753,7 +9753,7 @@
                 "id": "5479",
                 "info": {
                     "age": "48",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Inpatient | General",
                     "sessionID": "s001",
                     "seizureCount": "0"
@@ -9769,7 +9769,7 @@
                 "id": "5479",
                 "info": {
                     "age": "48",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Inpatient | General",
                     "sessionID": "s002",
                     "seizureCount": "0"
@@ -9782,7 +9782,7 @@
                 "id": "5625",
                 "info": {
                     "age": "33",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Outpatient | Outpatient",
                     "sessionID": "s001",
                     "seizureCount": "0"
@@ -9812,7 +9812,7 @@
                 "id": "2297",
                 "info": {
                     "age": "66",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | RICU",
                     "sessionID": "s003",
                     "seizureCount": "12"
@@ -9932,7 +9932,7 @@
                 "id": "2297",
                 "info": {
                     "age": "66",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "ICU | RICU",
                     "sessionID": "s004",
                     "seizureCount": "4"
@@ -9980,7 +9980,7 @@
                 "id": "4087",
                 "info": {
                     "age": "58",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Inpatient | General",
                     "sessionID": "s003",
                     "seizureCount": "2"
@@ -10010,7 +10010,7 @@
                 "id": "5479",
                 "info": {
                     "age": "48",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "EMU | EMU",
                     "sessionID": "s005",
                     "seizureCount": "8"
@@ -10094,7 +10094,7 @@
                 "id": "5479",
                 "info": {
                     "age": "48",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "EMU | EMU",
                     "sessionID": "s006",
                     "seizureCount": "1"
@@ -10240,7 +10240,7 @@
                 "id": "4087",
                 "info": {
                     "age": "58",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "Inpatient | General",
                     "sessionID": "s003",
                     "seizureCount": "2"
@@ -10255,7 +10255,7 @@
                 "id": "5479",
                 "info": {
                     "age": "48",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "EMU | EMU",
                     "sessionID": "s005",
                     "seizureCount": "8"
@@ -10270,7 +10270,7 @@
                 "id": "5479",
                 "info": {
                     "age": "48",
-                    "gender": "woman",
+                    "gender": "female",
                     "EEG": "EMU | EMU",
                     "sessionID": "s006",
                     "seizureCount": "1"

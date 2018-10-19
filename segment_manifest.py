@@ -26,7 +26,7 @@ with open('./original_data_manifest/Temple_University_Hospital_EEG.json') as f:
             except Exception:
                 patientMap[id] = {}
                 patientMap[id]['age'] = set(record['age']).pop()
-                patientMap[id]['gender'] = set(record['gender']).pop()
+                patientMap[id]['gender'] = patient['info']['gender']
                 patientMap[id]['Seizure Type'] = set(record['seizureType'])
                 patientMap[id]['No.Seizures'] = 0
 

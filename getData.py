@@ -138,5 +138,3 @@ with open(f'{fn}.csv', newline='\n') as f:
 
 with open(f'{fn}.json', 'w') as outfile:
     json.dump(jsonOutput, outfile)
-
-# print(ExtraInfo.train)

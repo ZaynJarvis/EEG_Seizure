@@ -18,50 +18,26 @@ elif sys.argv[1] == 'test':
     DataManifest.setFolder('testSetSeg')
 
 
-def seizureExtraction(patient):
-    for session in patient['sessions']:
+def noseizureExtraction(patient):
+    for edf in patient['fileNames']:
+        edfRecord = EDF(edf)
+        seizureDuration = round(edfRecord.duration(), 4)
         manifest = DataManifest(
-            session["edf"].split("/")[-1], session['seizure']['seizureType'],
-            patient['info']['age'], patient['info']['gender'])
-        seizureDuration = str(
-            round(
-                float(session['seizure']['stop']) - float(
-                    session['seizure']['start']), 4))
+            edf.split("/")[-1], 'No', patient['info']['age'],
+            patient['info']['gender'])
 
-        for i in range(
-                int((float(session['seizure']['stop']) - float(
-                    session['seizure']['start'])) // timeWindow)):
-            edfRecord = EDF(session['edf'])
-            edfRecord.loadData(
-                str(float(session['seizure']['start']) + timeWindow * i),
-                str(float(session['seizure']['start']) + timeWindow * (i + 1)))
+        for i in range(int(seizureDuration // timeWindow)):
+            edfRecord = EDF(edf)
+            edfRecord.loadData(timeWindow * i, timeWindow * (i + 1))
             manifest.seg = i + 1
-            manifest.seizureDuration = seizureDuration
-            manifest.freq = edfRecord.ofreq
             manifest.generateRecord()
-            manifest.writeToManifest()
-
             edfRecord.saveFile(edfRecord.montageConversion(),
                                manifest.fileName)
 
 
-def noseizureExtraction(data, patientId):
-    aggregate = filter(lambda x: x['id'] == patientId, data)
-    files = list(map(lambda x: x['fileNames'], aggregate))
-    itemList = chain.from_iterable(files)
-    a = 0
-    for record in itemList:
-        edfRecord = EDF(record)
-        a += edfRecord.duration()
-    return a
-
-
 with open(f'{db}.json') as f:
-    patientList = set()
     data = json.load(f)
-    DataManifest.buildDir()
-    result = {}
     for channel in path:
-        patients = data[channel]['seizure']
+        patients = data[channel]['noSeizure']
         for patient in patients:
-            seizureExtraction(patient)
+            noseizureExtraction(patient)

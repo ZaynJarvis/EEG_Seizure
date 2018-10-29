@@ -1,7 +1,11 @@
 import json
-patientMap = {}
-
 import pandas as pd
+from devMod import Injector
+
+Injector.datasetPrompt()
+Injector.timeWindowPrompt()
+
+patientMap = {}
 
 
 def mean(arr):
@@ -13,9 +17,10 @@ def std(arr):
     return sum(map(lambda x: (x - m)**2, arr)) / len(arr)
 
 
-with open('./original_data_manifest/Temple_University_Hospital_EEG.json') as f:
-    df = pd.read_csv('./trainSetSeg/manifest.csv').drop(
-        ['index', 'originalFreq', 'sampleFreq', 'fileName'], axis=1)
+with open(f'./{Injector.location}.json') as f:
+    df = pd.read_csv(
+        f'./{Injector.dataset}_{Injector.timeWindow}s_seg/manifest.csv').drop(
+            ['index', 'originalFreq', 'sampleFreq', 'fileName'], axis=1)
     data = json.load(f)
     for channel in data.keys():
         for patient in data[channel]['seizure']:
@@ -36,10 +41,8 @@ with open('./original_data_manifest/Temple_University_Hospital_EEG.json') as f:
                 patientMap[id]['No.EEGSegment'] = len(record)
             patientMap[id]['No.Seizures'] += int(
                 patient['info']['seizureCount'])
-import pprint
 
 
-# pprint.pprint(patientMap)
 def buildDict(key):
     info = patientMap[key]
     return {
@@ -53,10 +56,10 @@ def buildDict(key):
     }
 
 
-pprint.pprint(list(map(buildDict, patientMap.keys())))
 import csv
-with open('./original_data_manifest/dev_train_5s_seg_manifest.csv',
-          'w') as target:
+with open(
+        f'./original_data_manifest/{Injector.dataset}_{Injector.timeWindow}s_seg_manifest.csv',
+        'w') as target:
     writer = csv.DictWriter(
         target,
         fieldnames=[

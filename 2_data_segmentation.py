@@ -1,21 +1,11 @@
 import sys
 import json
 from itertools import chain
-from devMod import EDF, DataManifest, path
+from devMod import EDF, DataManifest, path, Injector
 
-timeWindow = int(input("what's your time window?\n"))
-
-# run: ```python data_segmentation.py prod``` for training dataset
-#  or: ```python data_segmentation.py test``` for dev_test dataset
-
-if sys.argv[1] == 'train':
-    cropEnd = True
-    db = 'original_data_manifest/Temple_University_Hospital_EEG'
-    DataManifest.setFolder('trainSetSeg')
-elif sys.argv[1] == 'test':
-    cropEnd = False
-    db = 'original_data_manifest/dev_test'
-    DataManifest.setFolder('testSetSeg')
+Injector.datasetPrompt()
+Injector.timeWindowPrompt()
+Injector.filterPrompt()
 
 
 def seizureExtraction(patient):
@@ -45,19 +35,11 @@ def seizureExtraction(patient):
                                manifest.fileName)
 
 
-def noseizureExtraction(data, patientId):
-    aggregate = filter(lambda x: x['id'] == patientId, data)
-    files = list(map(lambda x: x['fileNames'], aggregate))
-    itemList = chain.from_iterable(files)
-    a = 0
-    for record in itemList:
-        edfRecord = EDF(record)
-        a += edfRecord.duration()
-    return a
-
-
 def main():
-    with open(f'{db}.json') as f:
+    EDF.applyFilter = Injector.filter
+    DataManifest.setFolder('./{}_{}s_seg'.format(Injector.dataset,
+                                                 Injector.timeWindow))
+    with open(f'{Injector.location}.json') as f:
         patientList = set()
         data = json.load(f)
         DataManifest.buildDir()

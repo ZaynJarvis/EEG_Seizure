@@ -1,19 +1,10 @@
 import sys
 import json
 from itertools import chain
-from devMod import EDF, DataManifest, path
+from devMod import EDF, DataManifest, path, Injector
 
-# run: ```python extract_seizure.py prod``` for training dataset
-#  or: ```python extract_seizure.py test``` for dev_test dataset
-
-if sys.argv[1] == 'train':
-    cropEnd = True
-    db = 'original_data_manifest/Temple_University_Hospital_EEG'
-    DataManifest.setFolder('trainSet')
-elif sys.argv[1] == 'test':
-    cropEnd = False
-    db = 'original_data_manifest/dev_test'
-    DataManifest.setFolder('testSet')
+Injector.datasetPrompt()
+Injector.filterPrompt()
 
 
 def seizureExtraction(patient):
@@ -21,16 +12,15 @@ def seizureExtraction(patient):
         manifest = DataManifest(
             session["edf"].split("/")[-1], session['seizure']['seizureType'],
             patient['info']['age'], patient['info']['gender'])
-        seizureDuration = str(
-            round(
-                float(session['seizure']['stop']) - float(
-                    session['seizure']['start']), 4))
+        seizureDuration = \
+            float(session['seizure']['stop']) - \
+            float(session['seizure']['start'])
         edfRecord = EDF(session['edf'])
         edfRecord.loadData(
             float(session['seizure']['start']),
             float(session['seizure']['stop']))
 
-        manifest.seizureDuration = seizureDuration
+        manifest.setSeizureDuration(seizureDuration)
         manifest.freq = edfRecord.ofreq
         manifest.seg = 1
         manifest.generateRecord()
@@ -38,26 +28,20 @@ def seizureExtraction(patient):
         edfRecord.saveFile(edfRecord.montageConversion(), manifest.fileName)
 
 
-def noseizureExtraction(data, patientId):
-    aggregate = filter(lambda x: x['id'] == patientId, data)
-    files = list(map(lambda x: x['fileNames'], aggregate))
-    itemList = chain.from_iterable(files)
-    a = 0
-    for record in itemList:
-        edfRecord = EDF(record)
-        a += edfRecord.duration()
-    return a
-
-
 def main():
-    with open(f'{db}.json') as f:
+    EDF.setFilter(Injector.filter)
+    DataManifest.setFolder(Injector.dataset)
+    with open(f'./{Injector.location}.json') as f:
         patientList = set()
         data = json.load(f)
         DataManifest.buildDir()
         result = {}
+        sessionsWithSeizures = 0
         for channel in path:
             patients = data[channel]['seizure']
-            for patient in patients:
+            sessionsWithSeizures += len(patients)
+            for patient in patients[:3]:
+                patientList.add(patient['id'])
                 seizureExtraction(patient)
 
 
@@ -66,4 +50,6 @@ start_time = time.time()
 main()
 print("--- %s seconds ---" % (time.time() - start_time))
 
-print("count: " + str(DataManifest.index))
+print("Total seizure duration: " + str(DataManifest.totalDuration))
+print("No. sessions w/ seizures: " + str(sessionsWithSeizures))
+print("No. patients w/ seizures: " + str(len(patientList)))

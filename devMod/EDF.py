@@ -17,6 +17,7 @@ class EDF:
     sigChan = {}
     sigFreq = {}
     sfreq = 128.0
+    filterName = 'bandpass'
 
     def __init__(self, edf):
         self.raw = read_raw_edf(edf, preload=False, stim_channel=None)
@@ -25,20 +26,36 @@ class EDF:
 
     def __del__(self):
         self.raw.close()
-    
+    @classmethod
+    def setFilter(cls, filterName):
+        cls.filterName = filterName
     def duration(self):
         return self.raw.n_times / self.raw.info['sfreq']
 
     def loadData(self, start, stop):
         self.raw = self.raw.crop(tmin=float(start), tmax=float(stop))
-        self.raw = self.raw.load_data() \
-            .pick_channels(['FP1', 'FP2', 'F3', 'F4', 'C3', 'C4', 'P3', 'P4', 'O1',
-                            'O2', 'F7', 'F8', 'T3', 'T4', 'T5', 'T6', 'FZ', 'CZ', 'PZ']) \
-            .reorder_channels(['FP1', 'FP2', 'F3', 'F4', 'C3', 'C4', 'P3', 'P4', 'O1',
-                               'O2', 'F7', 'F8', 'T3', 'T4', 'T5', 'T6', 'FZ', 'CZ', 'PZ']) \
-            .pick_types(meg=False, eeg=True) \
-            .resample(sfreq=EDF.sfreq) \
-            .filter(1, 30, method='iir')
+        if EDF.filterName == 'bandpass':
+            self.raw = self.raw.load_data() \
+                .pick_channels(['FP1', 'FP2', 'F3', 'F4', 'C3', 'C4', 'P3', 'P4', 'O1',
+                                'O2', 'F7', 'F8', 'T3', 'T4', 'T5', 'T6', 'FZ', 'CZ', 'PZ']) \
+                .reorder_channels(['FP1', 'FP2', 'F3', 'F4', 'C3', 'C4', 'P3', 'P4', 'O1',
+                                'O2', 'F7', 'F8', 'T3', 'T4', 'T5', 'T6', 'FZ', 'CZ', 'PZ']) \
+                .pick_types(meg=False, eeg=True) \
+                .resample(sfreq=EDF.sfreq) \
+                .filter(
+                    1, 30, method='iir'
+                )  # Butterworth bandpass filter between 1 and 30 Hz.
+        elif EDF.filterName == 'notch':
+            self.raw = self.raw.load_data() \
+                .pick_channels(['FP1', 'FP2', 'F3', 'F4', 'C3', 'C4', 'P3', 'P4', 'O1',
+                                'O2', 'F7', 'F8', 'T3', 'T4', 'T5', 'T6', 'FZ', 'CZ', 'PZ']) \
+                .reorder_channels(['FP1', 'FP2', 'F3', 'F4', 'C3', 'C4', 'P3', 'P4', 'O1',
+                                'O2', 'F7', 'F8', 'T3', 'T4', 'T5', 'T6', 'FZ', 'CZ', 'PZ']) \
+                .pick_types(meg=False, eeg=True) \
+                .resample(sfreq=EDF.sfreq) \
+                .notch_filter(60, method='iir').filter(
+                    1, None, method='iir'
+                )  # IIR notch filter of 60 Hz and IIR high pass filter of 1 Hz.
         return self.raw
 
     def montageConversion(self):

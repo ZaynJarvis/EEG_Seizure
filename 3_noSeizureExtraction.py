@@ -2,21 +2,11 @@ import os
 import sys
 import json
 from itertools import chain
-from devMod import EDF, DataManifest, path
+from devMod import EDF, DataManifest, path, Injector
 
-timeWindow = int(input("what's your time window?\n"))
-
-# run: ```python data_segmentation.py prod``` for training dataset
-#  or: ```python data_segmentation.py test``` for dev_test dataset
-
-if sys.argv[1] == 'train':
-    cropEnd = True
-    db = 'original_data_manifest/Temple_University_Hospital_EEG'
-    DataManifest.setFolder('trainSetSeg')
-elif sys.argv[1] == 'test':
-    cropEnd = False
-    db = 'original_data_manifest/dev_test'
-    DataManifest.setFolder('testSetSeg')
+Injector.datasetPrompt()
+Injector.timeWindowPrompt()
+Injector.filterPrompt()
 
 
 def noseizureExtraction(patient):
@@ -27,9 +17,10 @@ def noseizureExtraction(patient):
             edf.split("/")[-1], 'No', patient['info']['age'],
             patient['info']['gender'])
 
-        for i in range(int(seizureDuration // timeWindow)):
+        for i in range(int(seizureDuration // Injector.timeWindow)):
             edfRecord = EDF(edf)
-            edfRecord.loadData(timeWindow * i, timeWindow * (i + 1))
+            edfRecord.loadData(Injector.timeWindow * i,
+                               Injector.timeWindow * (i + 1))
             manifest.seg = i + 1
             manifest.generateRecord()
             edfRecord.saveFile(edfRecord.montageConversion(),
@@ -37,7 +28,10 @@ def noseizureExtraction(patient):
 
 
 def main():
-    with open(f'{db}.json') as f:
+    EDF.applyFilter = Injector.filter
+    DataManifest.setFolder('./{}_{}s_seg'.format(Injector.dataset,
+                                                 Injector.timeWindow))
+    with open(f'{Injector.location}.json') as f:
         data = json.load(f)
         os.makedirs(f'./{DataManifest.dirName}', exist_ok=True)
         for channel in path:

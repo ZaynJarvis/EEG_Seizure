@@ -9,8 +9,8 @@ class DataManifest:
         'seizureType', 'fileName'
     ]
     index = 0
-
     fileList = {}
+    totalDuration = 0
 
     @classmethod
     def setFolder(cls, dirName):
@@ -29,7 +29,6 @@ class DataManifest:
         self.gender = gender
         self.ogFile = fileName
         self.seizureType = seizureType
-        self.seizureDuration = 0
 
         os.makedirs(
             f'./{DataManifest.dirName}/{self.seizureType}', exist_ok=True)
@@ -49,6 +48,10 @@ class DataManifest:
                 self.patientID, self.sessionID, self.fileID, '_se' + str(
                     self.sessionCount), '_sg' + str(self.seg), 'raw.fif'
             ])
+
+    def setSeizureDuration(self, duration):
+        DataManifest.totalDuration += duration
+        self.seizureDuration = str(round(duration, 4))
 
     def buildDict(self):
         return {

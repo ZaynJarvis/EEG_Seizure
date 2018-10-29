@@ -1,9 +1,7 @@
-
 from mne import Epochs, pick_types, find_events
 from mne.io import concatenate_raws, read_raw_edf, read_raw_fif
 
-raw = read_raw_fif('./testDir/00000492_s003_t000raw.fif',
-                   preload=True)
+raw = read_raw_fif('./testDir/00000492_s003_t000raw.fif', preload=True)
 
 # raw = read_raw_edf('./edf/train/03_tcp_ar_a/008/00000883/s012_2010_09_13/00000883_s012_t001.edf',
 #                    preload=True, stim_channel='auto')

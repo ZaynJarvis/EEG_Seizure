@@ -1,6 +1,6 @@
 from pprint import pprint
-import pickle
 import re
+import pickle
 with open('./devMod/test_Age_Gender_bak.pkl', 'rb') as f:
     des = pickle.load(f)
 new = {}

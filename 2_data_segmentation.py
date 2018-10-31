@@ -51,7 +51,7 @@ def main():
             patients = data[channel]['seizure']
             for patient in patients:
                 seizureExtraction(patient)
-    print("count: " + str(DataManifest.index))
+    print("Segments count: " + str(DataManifest.index))
 
 
 import time

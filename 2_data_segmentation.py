@@ -48,11 +48,10 @@ def main():
             patients = data[channel]['seizure']
             for patient in patients:
                 seizureExtraction(patient)
+    print("count: " + str(DataManifest.index))
 
 
 import time
 start_time = time.time()
 main()
 print("--- %s seconds ---" % (time.time() - start_time))
-
-print("count: " + str(DataManifest.index))

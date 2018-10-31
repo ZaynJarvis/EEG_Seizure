@@ -43,13 +43,12 @@ def main():
             for patient in patients[:3]:
                 patientList.add(patient['id'])
                 seizureExtraction(patient)
+    print("Total seizure duration: " + str(DataManifest.totalDuration))
+    print("No. sessions w/ seizures: " + str(sessionsWithSeizures))
+    print("No. patients w/ seizures: " + str(len(patientList)))
 
 
 import time
 start_time = time.time()
 main()
 print("--- %s seconds ---" % (time.time() - start_time))
-
-print("Total seizure duration: " + str(DataManifest.totalDuration))
-print("No. sessions w/ seizures: " + str(sessionsWithSeizures))
-print("No. patients w/ seizures: " + str(len(patientList)))

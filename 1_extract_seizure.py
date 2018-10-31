@@ -48,7 +48,15 @@ def main():
             for patient in patients:
                 patientList.add(patient['id'])
                 seizureExtraction(patient)
-
+    print("The record is set to use the following channels in sequence:")
+    print("------------")
+    if Injector.performConversion:
+        edfChannels = EDF.montageConversionChannels
+    else:
+        edfChannels = EDF.commonChannels
+    for i, c in enumerate(edfChannels):
+        print("No.{:02d}: {}".format(i + 1, c))
+    print("------------")
     print("Total number of seizures: " + str(DataManifest.index))
     print("Total seizure duration: " + str(DataManifest.totalDuration))
     print("No. sessions w/ seizures: " + str(sessionsWithSeizures))

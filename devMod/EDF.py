@@ -18,6 +18,15 @@ class EDF:
     sigFreq = {}
     sfreq = 128.0
     filterName = 'bandpass'
+    commonChannels = [
+        'FP1', 'FP2', 'F3', 'F4', 'C3', 'C4', 'P3', 'P4', 'O1', 'O2', 'F7',
+        'F8', 'T3', 'T4', 'T5', 'T6', 'FZ', 'CZ', 'PZ'
+    ]
+    montageConversionChannels = ["FP1-F7", "F7-T3", "T3-T5", "T5-O1", "FP2-F8",
+                              "F8-T4", "T4-T6", "T6-O2", "T3-C3", "C3-CZ",
+                              "CZ-C4", "C4-T4", "FP1-F3", "F3-C3", "C3-P3",
+                              "P3-O1", "FP2-F4", "F4-C4", "C4-P4", "P4-02"]
+
 
     def __init__(self, edf):
         self.raw = read_raw_edf(edf, preload=False, stim_channel=None)
@@ -35,10 +44,8 @@ class EDF:
     def loadData(self, start, stop):
         self.raw = self.raw.crop(tmin=float(start), tmax=float(stop))
         self.raw = self.raw.load_data() \
-            .pick_channels(['FP1', 'FP2', 'F3', 'F4', 'C3', 'C4', 'P3', 'P4', 'O1',
-                            'O2', 'F7', 'F8', 'T3', 'T4', 'T5', 'T6', 'FZ', 'CZ', 'PZ']) \
-            .reorder_channels(['FP1', 'FP2', 'F3', 'F4', 'C3', 'C4', 'P3', 'P4', 'O1',
-                            'O2', 'F7', 'F8', 'T3', 'T4', 'T5', 'T6', 'FZ', 'CZ', 'PZ']) \
+            .pick_channels(EDF.commonChannels) \
+            .reorder_channels(EDF.commonChannels) \
             .pick_types(meg=False, eeg=True) \
             .resample(sfreq=EDF.sfreq)
         if EDF.filterName == 'bandpass':
@@ -57,11 +64,7 @@ class EDF:
 
     def montageConversion(self):
         info = create_info(
-            ch_names=[
-                "FP1-F7", "F7-T3", "T3-T5", "T5-O1", "FP2-F8", "F8-T4",
-                "T4-T6", "T6-O2", "T3-C3", "C3-CZ", "CZ-C4", "C4-T4", "FP1-F3",
-                "F3-C3", "C3-P3", "P3-O1", "FP2-F4", "F4-C4", "C4-P4", "P4-02"
-            ],
+            ch_names=EDF.montageConversionChannels,
             ch_types='eeg',
             sfreq=EDF.sfreq)
         data = [

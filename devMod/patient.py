@@ -20,6 +20,7 @@ class Patient:
         except Exception:
             self.info["age"] = 'unknown'
             self.info["gender"] = 'unknown'
+            print(self.id)
         self.info["EEG"] = EEG
         self.info["sessionID"] = sessionID
         self.info["seizureCount"] = count

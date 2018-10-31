@@ -39,7 +39,7 @@ def seizureExtraction(patient):
 
 
 def main():
-    EDF.applyFilter = Injector.filter
+    EDF.setFilter(Injector.filter)
     DataManifest.setFolder('./{}_{}s_seg'.format(Injector.dataset,
                                                  Injector.timeWindow))
     with open(f'{Injector.location}.json') as f:

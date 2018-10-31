@@ -7,6 +7,7 @@ from devMod import EDF, DataManifest, path, Injector
 Injector.datasetPrompt()
 Injector.timeWindowPrompt()
 Injector.filterPrompt()
+Injector.setMontageConversionPrompt()
 
 
 def noseizureExtraction(patient):
@@ -23,8 +24,11 @@ def noseizureExtraction(patient):
                                Injector.timeWindow * (i + 1))
             manifest.seg = i + 1
             manifest.generateRecord()
-            edfRecord.saveFile(edfRecord.montageConversion(),
-                               manifest.fileName)
+            if Injector.performConversion:
+                edfRecord.saveFile(edfRecord.montageConversion(),
+                                   manifest.fileName)
+            else:
+                edfRecord.saveFile(edfRecord.raw, manifest.fileName)
 
 
 def main():

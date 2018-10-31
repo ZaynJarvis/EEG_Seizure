@@ -1,7 +1,7 @@
 from pprint import pprint
 import re
 import pickle
-with open('./devMod/test_Age_Gender_bak.pkl', 'rb') as f:
+with open('./devMod/train_Age_Gender.pkl', 'rb') as f:
     des = pickle.load(f)
 new = {}
 refind = {}
@@ -27,6 +27,11 @@ for k, v in des.items():
     #     des[k] = {'age': 'unknown', 'gender': 'unknown'}
     #     count += 1
 
-with open('./devMod/test_Age_Gender.pkl', 'wb') as f:
+des['21'] = {'age': 'unknown', 'gender': 'unknown'}
+des['502'] = {'age': 'unknown', 'gender': 'unknown'}
+des['752'] = {'age': 'unknown', 'gender': 'unknown'}
+des['1681'] = {'age': 'unknown', 'gender': 'unknown'}
+
+with open('./devMod/train_Age_Gender.pkl', 'wb') as f:
     pickle.dump(des, f)
 pprint(des)

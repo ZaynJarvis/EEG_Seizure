@@ -259,5 +259,9 @@ PatientID,age,gender
 8018,60,male
 8029,57,male
 9162,58,female
+21,unknown,unknown
+502,unknown,unknown
+752,unknown,unknown
+1681,unknown,unknown
 avg_age,maleCount,femaleCount,unknownGender
-51.55,120,122,18
+51.55,120,122,22

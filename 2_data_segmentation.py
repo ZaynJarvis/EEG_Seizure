@@ -14,18 +14,18 @@ def seizureExtraction(patient):
         manifest = DataManifest(
             session["edf"].split("/")[-1], session['seizure']['seizureType'],
             patient['info']['age'], patient['info']['gender'])
-        seizureDuration = str(
-            round(
-                float(session['seizure']['stop']) - float(
-                    session['seizure']['start']), 4))
-
-        for i in range(
-                int((float(session['seizure']['stop']) - float(
-                    session['seizure']['start'])) // timeWindow)):
+        seizureDuration = \
+            float(session['seizure']['stop']) - \
+            float(session['seizure']['start'])
+        for i in range(int(seizureDuration // Injector.timeWindow)):
             edfRecord = EDF(session['edf'])
             edfRecord.loadData(
-                str(float(session['seizure']['start']) + timeWindow * i),
-                str(float(session['seizure']['start']) + timeWindow * (i + 1)))
+                str(
+                    float(session['seizure']['start']) +
+                    Injector.timeWindow * i),
+                str(
+                    float(session['seizure']['start']) +
+                    Injector.timeWindow * (i + 1)))
             manifest.seg = i + 1
             manifest.seizureDuration = seizureDuration
             manifest.freq = edfRecord.ofreq

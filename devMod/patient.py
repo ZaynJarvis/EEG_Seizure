@@ -13,6 +13,11 @@ class Patient:
         self.fileName = None
         self.fileNameList = []
         self.info = {}
+        self.info["EEG"] = EEG
+        self.info["sessionID"] = sessionID
+        self.info["seizureCount"] = count
+        self.seizure = []
+        self.noSeizure = []
         try:
             self.info["age"] = ExtraInfo.info[Patient.dataset][self.id]['age']
             self.info["gender"] = ExtraInfo.info[Patient.dataset][self.
@@ -21,11 +26,6 @@ class Patient:
             self.info["age"] = 'unknown'
             self.info["gender"] = 'unknown'
             print(self.id)
-        self.info["EEG"] = EEG
-        self.info["sessionID"] = sessionID
-        self.info["seizureCount"] = count
-        self.seizure = []
-        self.noSeizure = []
 
     def addSession(self, fileName, start, stop, seizureType, edf):
         if fileName:

@@ -29,7 +29,6 @@ class DataManifest:
         self.gender = gender
         self.ogFile = fileName
         self.seizureType = seizureType
-
         os.makedirs(
             f'./{DataManifest.dirName}/{self.seizureType}', exist_ok=True)
         self.sessionCount = DataManifest.fileList.get(self.ogFile, 0) + 1

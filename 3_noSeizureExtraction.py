@@ -18,7 +18,7 @@ def noseizureExtraction(patient):
             edf.split("/")[-1], 'No', patient['info']['age'],
             patient['info']['gender'])
 
-        for i in range(int(seizureDuration // Injector.timeWindow)):
+        for i in range(int(seizureDuration // Injector.timeWindow) - 1):
             edfRecord = EDF(edf)
             edfRecord.loadData(Injector.timeWindow * i,
                                Injector.timeWindow * (i + 1))

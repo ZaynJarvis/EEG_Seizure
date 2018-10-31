@@ -15,7 +15,7 @@ def noseizureExtraction(patient):
         edfRecord = EDF(edf)
         seizureDuration = round(edfRecord.duration(), 4)
         manifest = DataManifest(
-            edf.split("/")[-1], 'No', patient['info']['age'],
+            edf.split("/")[-1], 'noseizure', patient['info']['age'],
             patient['info']['gender'])
 
         for i in range(int(seizureDuration // Injector.timeWindow) - 1):
@@ -33,8 +33,8 @@ def noseizureExtraction(patient):
 
 def main():
     EDF.setFilter(Injector.filter)
-    DataManifest.setFolder('./{}_{}s_seg'.format(Injector.dataset,
-                                                 Injector.timeWindow))
+    DataManifest.setFolder('./{}_{}s_noseizure_seg'.format(
+        Injector.dataset, Injector.timeWindow))
     with open(f'{Injector.location}.json') as f:
         data = json.load(f)
         os.makedirs(f'./{DataManifest.dirName}', exist_ok=True)

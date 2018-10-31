@@ -40,7 +40,7 @@ def main():
         for channel in path:
             patients = data[channel]['seizure']
             sessionsWithSeizures += len(patients)
-            for patient in patients[:3]:
+            for patient in patients:
                 patientList.add(patient['id'])
                 seizureExtraction(patient)
     print("Total seizure duration: " + str(DataManifest.totalDuration))

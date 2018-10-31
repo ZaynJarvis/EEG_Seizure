@@ -48,6 +48,8 @@ def main():
             for patient in patients:
                 patientList.add(patient['id'])
                 seizureExtraction(patient)
+
+    print("Total number of seizures: " + str(DataManifest.index))
     print("Total seizure duration: " + str(DataManifest.totalDuration))
     print("No. sessions w/ seizures: " + str(sessionsWithSeizures))
     print("No. patients w/ seizures: " + str(len(patientList)))

@@ -5,6 +5,7 @@ from devMod import EDF, DataManifest, path, Injector
 
 Injector.datasetPrompt()
 Injector.filterPrompt()
+Injector.setMontageConversionPrompt()
 
 
 def seizureExtraction(patient):
@@ -25,7 +26,11 @@ def seizureExtraction(patient):
         manifest.seg = 1
         manifest.generateRecord()
         manifest.writeToManifest()
-        edfRecord.saveFile(edfRecord.montageConversion(), manifest.fileName)
+        if Injector.performConversion:
+            edfRecord.saveFile(edfRecord.montageConversion(),
+                               manifest.fileName)
+        else:
+            edfRecord.saveFile(edfRecord.raw, manifest.fileName)
 
 
 def main():

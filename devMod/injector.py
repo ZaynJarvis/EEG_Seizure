@@ -25,6 +25,20 @@ class Injector:
                 )
 
     @classmethod
+    def setMontageConversionPrompt(cls):
+        setMontage = input("Set montage conversion?\n(Y/N)?\n")
+        while True:
+            if setMontage.lower() == 'y':
+                cls.performConversion = True
+                break
+            elif setMontage.lower() == 'n':
+                cls.performConversion = False
+                break
+            else:
+                print('Input not valid...')
+                setMontage = int(input("Set montage conversion?\n(Y/N)?\n"))
+
+    @classmethod
     def timeWindowPrompt(cls):
         cls.timeWindow = int(input("Set your time window?\n"))
 
@@ -32,17 +46,23 @@ class Injector:
     def filterPrompt(cls):
         setFilter = input(
             "Set your filter:\n" +
-            "a). Butterworth bandpass filter between 1 and 30 Hz;\n" +
-            "b). IIR notch filter of 60 Hz and IIR high pass filter of 1 Hz.\n"
-        )
-        if setFilter.lower() == 'a':
-            cls.filter = 'bandpass'
-        elif setFilter.lower() == 'b':
-            cls.filter = 'notch'
-        else:
-            print('Input not valid...')
-            setFilter = input(
-                "Set your filter:\n" +
-                "a). Butterworth bandpass filter between 1 and 30 Hz;\n" +
-                "b). IIR notch filter of 60 Hz and IIR high pass filter of 1 Hz.\n"
-            )
+            "a). Butterworth bandpass filter between 1 and 30 Hz;\n" + \
+            "b). IIR notch filter of 60 Hz and IIR high pass filter of 1 Hz;\n" + \
+            "c). Do not apply filter to the EEG signal.\n")
+        while True:
+            if setFilter.lower() == 'a':
+                cls.filter = 'bandpass'
+                break
+            elif setFilter.lower() == 'b':
+                cls.filter = 'notch'
+                break
+            elif setFilter.lower() == 'c':
+                cls.filter = 'none'
+                break
+            else:
+                print('Input not valid...')
+                setFilter = input(
+                    "Set your filter:\n" +
+                    "a). Butterworth bandpass filter between 1 and 30 Hz;\n" +
+                    "b). IIR notch filter of 60 Hz and IIR high pass filter of 1 Hz.\n"
+                )

@@ -47,9 +47,11 @@ class DataManifest:
         self.fileID = 't' + str(int(fileID[1:]))
         self.fileName = f'./{DataManifest.dirName}/{self.seizureType}/' + '_'.join(
             [
-                self.patientID, self.sessionID, self.fileID,
-                'se' + str(self.sessionCount),
-                str(self.seg), self.filterName, 'raw.fif'
+                x for x in [
+                    self.patientID, self.sessionID, self.fileID, 'se' +
+                    str(self.sessionCount),
+                    str(self.seg), self.filterName, 'raw.fif'
+                ] if x is not None
             ])
 
     def setSeizureDuration(self, duration):

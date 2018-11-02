@@ -42,7 +42,6 @@ class EDF:
         return self.raw.n_times / self.raw.info['sfreq']
 
     def loadData(self, start, stop):
-        self.raw = self.raw.crop(tmin=float(start), tmax=float(stop))
         self.raw = self.raw.load_data() \
             .pick_channels(EDF.commonChannels) \
             .reorder_channels(EDF.commonChannels) \
@@ -50,16 +49,18 @@ class EDF:
             .resample(sfreq=EDF.sfreq)
         if EDF.filterName == 'bandpass':
             self.raw = self.raw.filter(
-                    1, 30, method='iir'
+                    1, 32, method='iir'
                 )  # Butterworth bandpass filter between 1 and 30 Hz.
         elif EDF.filterName == 'notch':
             self.raw = self.raw\
+                .notch_filter(50, method='iir') \
                 .notch_filter(60, method='iir') \
                 .filter(
                         1, None, method='iir'
                     )  # IIR notch filter of 60 Hz and IIR high pass filter of 1 Hz.
         elif EDF.filterName == 'none':
             pass
+        self.raw = self.raw.crop(tmin=float(start), tmax=float(stop))
         return self.raw
 
     def montageConversion(self):

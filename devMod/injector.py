@@ -46,8 +46,8 @@ class Injector:
     def filterPrompt(cls):
         setFilter = input(
             "Set your filter:\n" +
-            "a). Butterworth bandpass filter between 1 and 30 Hz;\n" + \
-            "b). IIR notch filter of 60 Hz and IIR high pass filter of 1 Hz;\n" + \
+            "a). Butterworth bandpass filter between 1 and 32 Hz;\n" + \
+            "b). IIR notch filter of 50 Hz and 60 Hz and IIR high pass filter of 1 Hz;\n" + \
             "c). Do not apply filter to the EEG signal.\n")
         while True:
             if setFilter.lower() == 'a':

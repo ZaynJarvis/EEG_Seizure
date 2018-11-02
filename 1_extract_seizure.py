@@ -1,11 +1,14 @@
 import sys
 import json
+from shutil import copyfile
 from itertools import chain
 from devMod import EDF, DataManifest, path, Injector
 
 Injector.datasetPrompt()
-Injector.filterPrompt()
-Injector.setMontageConversionPrompt()
+Injector.preprocessPrompt()
+if Injector.preprocess:
+    Injector.filterPrompt()
+    Injector.setMontageConversionPrompt()
 
 
 def seizureExtraction(patient):
@@ -13,25 +16,29 @@ def seizureExtraction(patient):
         manifest = DataManifest(
             session["edf"].split("/")[-1], session['seizure']['seizureType'],
             patient['info']['age'], patient['info']['gender'])
-        seizureDuration = \
-            float(session['seizure']['stop']) - \
-            float(session['seizure']['start'])
-        edfRecord = EDF(session['edf'])
-        edfRecord.loadData(
-            float(session['seizure']['start']),
-            float(session['seizure']['stop']))
+            manifest.generateRecord()
+        if Injector.preprocess:
+            seizureDuration = \
+                float(session['seizure']['stop']) - \
+                float(session['seizure']['start'])
+            edfRecord = EDF(session['edf'])
+            edfRecord.loadData(
+                float(session['seizure']['start']),
+                float(session['seizure']['stop']))
 
-        manifest.setSeizureDuration(seizureDuration)
-        manifest.freq = edfRecord.ofreq
-        manifest.seg = 1
-        manifest.generateRecord()
-        manifest.writeToManifest()
-        if Injector.performConversion:
-            edfRecord.saveFile(edfRecord.montageConversion(),
-                               manifest.fileName)
+            manifest.setSeizureDuration(seizureDuration)
+            manifest.freq = edfRecord.ofreq
+            manifest.seg = 1
+            manifest.filterName = Injector.filter
+            manifest.generateRecord()
+            manifest.writeToManifest()
+            if Injector.performConversion:
+                edfRecord.saveFile(edfRecord.montageConversion(),
+                                   manifest.fileName)
+            else:
+                edfRecord.saveFile(edfRecord.raw, manifest.fileName)
         else:
-            edfRecord.saveFile(edfRecord.raw, manifest.fileName)
-
+            copyfile(session["edf"], manifest.fileName)
 
 def main():
     EDF.setFilter(Injector.filter)

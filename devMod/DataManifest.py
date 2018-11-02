@@ -29,6 +29,9 @@ class DataManifest:
         self.gender = gender
         self.ogFile = fileName
         self.seizureType = seizureType
+        self.seg = None
+        self.filterName = None
+
         os.makedirs(
             f'./{DataManifest.dirName}/{self.seizureType}', exist_ok=True)
         self.sessionCount = DataManifest.fileList.get(self.ogFile, 0) + 1
@@ -44,8 +47,9 @@ class DataManifest:
         self.fileID = 't' + str(int(fileID[1:]))
         self.fileName = f'./{DataManifest.dirName}/{self.seizureType}/' + '_'.join(
             [
-                self.patientID, self.sessionID, self.fileID, '_se' + str(
-                    self.sessionCount), '_sg' + str(self.seg), 'raw.fif'
+                self.patientID, self.sessionID, self.fileID,
+                'se' + str(self.sessionCount),
+                str(self.seg), self.filterName, 'raw.fif'
             ])
 
     def setSeizureDuration(self, duration):

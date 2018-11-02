@@ -29,7 +29,7 @@ class EDF:
 
 
     def __init__(self, edf):
-        self.raw = read_raw_edf(edf, preload=False, stim_channel=None)
+        self.raw = read_raw_edf(edf, preload=True, stim_channel=None)
         self.raw.rename_channels(mapping=self.changeChannel())
         self.ofreq = self.updateFreqRecord()
 
@@ -42,8 +42,7 @@ class EDF:
         return self.raw.n_times / self.raw.info['sfreq']
 
     def loadData(self, start, stop):
-        self.raw = self.raw.load_data() \
-            .pick_channels(EDF.commonChannels) \
+        self.raw = self.raw.pick_channels(EDF.commonChannels) \
             .reorder_channels(EDF.commonChannels) \
             .pick_types(meg=False, eeg=True) \
             .resample(sfreq=EDF.sfreq)
@@ -58,8 +57,6 @@ class EDF:
                 .filter(
                         1, None, method='iir'
                     )  # IIR notch filter of 60 Hz and IIR high pass filter of 1 Hz.
-        elif EDF.filterName == 'none':
-            pass
         self.raw = self.raw.crop(tmin=float(start), tmax=float(stop))
         return self.raw
 

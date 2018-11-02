@@ -25,6 +25,21 @@ class Injector:
                 )
 
     @classmethod
+    def preprocessPrompt(cls):
+        preProcessOption = input("Preprocess the EDF signals?\n(Y/N)?\n")
+        while True:
+            if preProcessOption.lower() == 'y':
+                cls.preprocess = True
+                break
+            elif preProcessOption.lower() == 'n':
+                cls.preprocess = False
+                break
+            else:
+                print('Input not valid...')
+                preProcessOption = int(
+                    input("Set montage conversion?\n(Y/N)?\n"))
+
+    @classmethod
     def setMontageConversionPrompt(cls):
         setMontage = input("Set montage conversion?\n(Y/N)?\n")
         while True:
@@ -41,14 +56,16 @@ class Injector:
     @classmethod
     def timeWindowPrompt(cls):
         cls.timeWindow = int(input("Set your time window?\n"))
+        while cls.timeWindow <= 0:
+            cls.timeWindow = int(input("Please set time window > 0.\n"))
 
     @classmethod
     def filterPrompt(cls):
         setFilter = input(
             "Set your filter:\n" +
             "a). Butterworth bandpass filter between 1 and 32 Hz;\n" + \
-            "b). IIR notch filter of 50 Hz and 60 Hz and IIR high pass filter of 1 Hz;\n" + \
-            "c). Do not apply filter to the EEG signal.\n")
+            "b). IIR notch filter of 50 Hz and 60 Hz and IIR high pass filter of 1 Hz;\n"
+            )
         while True:
             if setFilter.lower() == 'a':
                 cls.filter = 'bandpass'

@@ -16,7 +16,7 @@ def seizureExtraction(patient):
         manifest = DataManifest(
             session["edf"].split("/")[-1], session['seizure']['seizureType'],
             patient['info']['age'], patient['info']['gender'])
-            manifest.generateRecord()
+        manifest.generateRecord()
         if Injector.preprocess:
             seizureDuration = \
                 float(session['seizure']['stop']) - \
@@ -39,6 +39,7 @@ def seizureExtraction(patient):
                 edfRecord.saveFile(edfRecord.raw, manifest.fileName)
         else:
             copyfile(session["edf"], manifest.fileName)
+
 
 def main():
     EDF.setFilter(Injector.filter)

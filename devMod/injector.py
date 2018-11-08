@@ -1,4 +1,5 @@
 class Injector:
+    timeWindow = 0
     @classmethod
     def datasetPrompt(cls):
         chooseSet = input("Which data set are you using?\n" +
@@ -51,7 +52,7 @@ class Injector:
                 break
             else:
                 print('Input not valid...')
-                setMontage = int(input("Set montage conversion?\n(Y/N)?\n"))
+                setMontage = input("Set montage conversion?\n(Y/N)?\n")
 
     @classmethod
     def timeWindowPrompt(cls):
@@ -83,3 +84,17 @@ class Injector:
                     "a). Butterworth bandpass filter between 1 and 30 Hz;\n" +
                     "b). IIR notch filter of 60 Hz and IIR high pass filter of 1 Hz.\n"
                 )
+    
+    @classmethod
+    def mergePrompt(cls):
+        merge = input("Do you want to merge the data?\n(Y/N)?\n")
+        while True:
+            if merge.lower() == 'y':
+                cls.mergeFiles = True
+                break
+            elif merge.lower() == 'n':
+                cls.mergeFiles = False
+                break
+            else:
+                print('Input not valid...')
+                merge = input("Do you want to merge the data?\n(Y/N)?\n")

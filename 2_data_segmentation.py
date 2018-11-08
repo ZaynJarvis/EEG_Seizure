@@ -53,8 +53,25 @@ def main():
                 seizureExtraction(patient)
     print("Segments count: " + str(DataManifest.index))
 
+def merge():
+    merge_of_seizure = []
+    count = 0
+    subfolders = os.listdir(DataManifest.dirName)
+    for folder in subfolders:
+        files = os.listdir('{}/{}'.format(DataManifest.dirName, folder))
+        for fileItem in files:
+            raw = mne.io.read_raw_fif('{}/{}/{}'.format(DataManifest.dirName, folder, fileItem))
+            merge_of_seizure.append(raw)
+            count += 1
+    edfRecord.saveFile(
+        mne.concatenate_raws(merge_of_seizure), '{}/merged_seizure.fif'.format(DataManifest.dirName))
+    print(f"You have {count} segments merged.")
+
 
 import time
 start_time = time.time()
 main()
+Injector.mergePrompt()
+if Injector.mergeFiles:
+    merge()
 print("--- %s seconds ---" % (time.time() - start_time))

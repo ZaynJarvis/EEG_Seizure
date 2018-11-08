@@ -7,8 +7,8 @@ from devMod import EDF, DataManifest, path, Injector
 
 Injector.datasetPrompt()
 Injector.preprocessPrompt()
-Injector.timeWindowPrompt()
 if Injector.preprocess:
+    Injector.timeWindowPrompt()
     Injector.filterPrompt()
     Injector.setMontageConversionPrompt()
 
@@ -36,13 +36,17 @@ def noseizureExtraction(patient):
                 else:
                     edfRecord.saveFile(edfRecord.raw, manifest.fileName)
         else:
-            copyfile(edf, manifest.fileName)
+            edfRecord.saveFile(EDF(session["edf"]).raw, manifest.fileName)
 
 
 def main():
     EDF.setFilter(Injector.filter)
-    DataManifest.setFolder('./{}_{}s_noseizure_seg'.format(
-        Injector.dataset, Injector.timeWindow))
+    if Injector.timeWindow:
+        DataManifest.setFolder('./{}_{}s_noseizure_seg'.format(
+            Injector.dataset, Injector.timeWindow))
+    else:
+        DataManifest.setFolder('./{}_noseizure'.format(
+            Injector.dataset))
     with open(f'{Injector.location}.json') as f:
         data = json.load(f)
         os.makedirs(f'./{DataManifest.dirName}', exist_ok=True)
@@ -52,8 +56,20 @@ def main():
                 noseizureExtraction(patient)
     print("Segments count: " + str(DataManifest.index))
 
+def merge():
+    merge_of_noseizure = []
+    files = os.listdir('{}/{}'.format(DataManifest.dirName, 'noseizure'))
+    random.shuffle(files)[:count]
+    for fileItem in files:
+        raw = mne.io.read_raw_fif('{}/{}/{}'.format(DataManifest.dirName, 'noseizure', fileItem))
+        merge_of_noseizure.append(raw)
+    edfRecord.saveFile(
+        mne.concatenate_raws(merge_of_noseizure), '{}/merged_noseizure.fif'.format(path))
 
 import time
 start_time = time.time()
 main()
+Injector.mergePrompt()
+if Injector.mergeFiles:
+    merge()
 print("--- %s seconds ---" % (time.time() - start_time))

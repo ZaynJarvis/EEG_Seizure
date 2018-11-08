@@ -30,7 +30,6 @@ def seizureExtraction(patient):
             manifest.freq = edfRecord.ofreq
             manifest.seg = 1
             manifest.filterName = Injector.filter
-            manifest.generateRecord()
             manifest.writeToManifest()
             if Injector.performConversion:
                 edfRecord.saveFile(edfRecord.montageConversion(),
@@ -38,12 +37,13 @@ def seizureExtraction(patient):
             else:
                 edfRecord.saveFile(edfRecord.raw, manifest.fileName)
         else:
-            copyfile(session["edf"], manifest.fileName)
+            edfRecord.saveFile(EDF(session["edf"]).raw, manifest.fileName)
 
 
 def main():
     EDF.setFilter(Injector.filter)
-    DataManifest.setFolder(Injector.dataset)
+    DataManifest.setFolder('./{}_seizure'.format(
+            Injector.dataset))
     with open(f'./{Injector.location}.json') as f:
         patientList = set()
         data = json.load(f)

@@ -29,22 +29,24 @@ class EDF:
 
 
     def __init__(self, edf):
-        self.raw = read_raw_edf(edf, preload=True, stim_channel=None)
+        self.raw = read_raw_edf(edf, preload=True, stim_channel=None)\
+            .pick_channels(EDF.commonChannels) \
+            .reorder_channels(EDF.commonChannels) \
+            .pick_types(meg=False, eeg=True)
         self.raw.rename_channels(mapping=self.changeChannel())
         self.ofreq = self.updateFreqRecord()
 
     def __del__(self):
         self.raw.close()
+
     @classmethod
     def setFilter(cls, filterName):
         cls.filterName = filterName
+
     def duration(self):
         return self.raw.n_times / self.raw.info['sfreq']
 
     def loadData(self, start, stop):
-        self.raw = self.raw.pick_channels(EDF.commonChannels) \
-            .reorder_channels(EDF.commonChannels) \
-            .pick_types(meg=False, eeg=True)
         if EDF.filterName == 'bandpass':
             self.raw = self.raw.filter(
                     1, 32, method='iir'
@@ -60,6 +62,14 @@ class EDF:
             .resample(sfreq=EDF.sfreq) \
             .crop(tmin=float(start), tmax=float(stop))
         return self.raw
+
+    @classmethod
+    def getEmptyFIF():
+        info = create_info(
+            ch_names=EDF.montageConversionChannels,
+            ch_types='eeg',
+            sfreq=EDF.sfreq)
+        return RawArray([[] for i in range(len(montageConversionChannels))], info)
 
     def montageConversion(self):
         info = create_info(

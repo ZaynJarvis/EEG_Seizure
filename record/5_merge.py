@@ -7,6 +7,7 @@ dirname = input(
 path = './{}'.format(dirname)
 subfolders = os.listdir(path)
 subfolders.remove('noseizure')
+
 count = 0
 merge_of_seizure = []
 merge_of_noseizure = []
@@ -30,6 +31,6 @@ info = create_info(
     ch_names=EDF.montageConversionChannels, ch_types='eeg', sfreq=EDF.sfreq)
 
 edfRecord.saveFile(
-    RawArray(merge_of_seizure, info), '{}/merged_seizre.fif'.format(path))
+    RawArray(merge_of_seizure, info), '{}/merged_seizure.fif'.format(path))
 edfRecord.saveFile(
-    RawArray(merge_of_noseizure, info), '{}/merged_noseizre.fif'.format(path))
+    RawArray(merge_of_noseizure, info), '{}/merged_noseizure.fif'.format(path))

@@ -44,8 +44,7 @@ class EDF:
     def loadData(self, start, stop):
         self.raw = self.raw.pick_channels(EDF.commonChannels) \
             .reorder_channels(EDF.commonChannels) \
-            .pick_types(meg=False, eeg=True) \
-            .resample(sfreq=EDF.sfreq)
+            .pick_types(meg=False, eeg=True)
         if EDF.filterName == 'bandpass':
             self.raw = self.raw.filter(
                     1, 32, method='iir'
@@ -57,7 +56,9 @@ class EDF:
                 .filter(
                         1, None, method='iir'
                     )  # IIR notch filter of 60 Hz and IIR high pass filter of 1 Hz.
-        self.raw = self.raw.crop(tmin=float(start), tmax=float(stop))
+        self.raw = self.raw \
+            .resample(sfreq=EDF.sfreq) \
+            .crop(tmin=float(start), tmax=float(stop))
         return self.raw
 
     def montageConversion(self):

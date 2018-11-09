@@ -29,11 +29,12 @@ class EDF:
 
 
     def __init__(self, edf):
-        self.raw = read_raw_edf(edf, preload=True, stim_channel=None)\
+        self.raw = read_raw_edf(edf, preload=True, stim_channel=None)
+        self.raw.rename_channels(mapping=self.changeChannel())
+        self.raw\
             .pick_channels(EDF.commonChannels) \
             .reorder_channels(EDF.commonChannels) \
             .pick_types(meg=False, eeg=True)
-        self.raw.rename_channels(mapping=self.changeChannel())
         self.ofreq = self.updateFreqRecord()
 
     def __del__(self):

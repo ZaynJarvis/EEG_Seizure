@@ -4,9 +4,9 @@ import os
 
 class DataManifest:
     fieldnames = [
-        'index', 'patientID', 'age', 'gender', 'sessionID', 'fileID',
-        'segment', 'originalFreq', 'sampleFreq', 'seizureDuration',
-        'seizureType', 'fileName'
+        'patientID', 'age', 'gender', 'sessionID', 'fileID', 'segment',
+        'originalFreq', 'sampleFreq', 'seizureDuration', 'seizureType',
+        'fileName'
     ]
     index = 0
     fileList = {}
@@ -38,7 +38,6 @@ class DataManifest:
         DataManifest.fileList[self.ogFile] = self.sessionCount
 
     def generateRecord(self):
-        DataManifest.index += 1
         patientID, sessionID, fileID = \
             self.ogFile.split('.')[0].split('_')
 
@@ -60,7 +59,6 @@ class DataManifest:
 
     def buildDict(self):
         return {
-            'index': DataManifest.index,
             'age': self.age,
             'gender': self.gender,
             'patientID': self.patientID,
@@ -75,6 +73,7 @@ class DataManifest:
         }
 
     def writeToManifest(self):
+        DataManifest.index += 1
         with open(f'./{DataManifest.dirName}/manifest.csv', 'a') as csvfile:
             writer = csv.DictWriter(
                 csvfile, fieldnames=DataManifest.fieldnames)

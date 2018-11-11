@@ -29,6 +29,7 @@ def noseizureExtraction(patient):
                 manifest.seg = i + 1
                 manifest.filterName = Injector.filter
                 manifest.generateRecord()
+                manifest.freq = edfRecord.ofreq
                 manifest.writeToManifest()
                 if Injector.performConversion:
                     edfRecord.saveFile(edfRecord.montageConversion(),
@@ -45,8 +46,7 @@ def main():
         DataManifest.setFolder('./{}_{}s_noseizure_seg'.format(
             Injector.dataset, Injector.timeWindow))
     else:
-        DataManifest.setFolder('./{}_noseizure'.format(
-            Injector.dataset))
+        DataManifest.setFolder('./{}_noseizure'.format(Injector.dataset))
     with open(f'{Injector.location}.json') as f:
         data = json.load(f)
         os.makedirs(f'./{DataManifest.dirName}', exist_ok=True)
@@ -56,15 +56,19 @@ def main():
                 noseizureExtraction(patient)
     print("Segments count: " + str(DataManifest.index))
 
+
 def merge():
     merge_of_noseizure = []
     files = os.listdir('{}/{}'.format(DataManifest.dirName, 'noseizure'))
     random.shuffle(files)[:count]
     for fileItem in files:
-        raw = mne.io.read_raw_fif('{}/{}/{}'.format(DataManifest.dirName, 'noseizure', fileItem))
+        raw = mne.io.read_raw_fif('{}/{}/{}'.format(DataManifest.dirName,
+                                                    'noseizure', fileItem))
         merge_of_noseizure.append(raw)
     edfRecord.saveFile(
-        mne.concatenate_raws(merge_of_noseizure), '{}/merged_noseizure.fif'.format(path))
+        mne.concatenate_raws(merge_of_noseizure),
+        '{}/merged_noseizure.fif'.format(path))
+
 
 import time
 start_time = time.time()

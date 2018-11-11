@@ -42,8 +42,7 @@ def seizureExtraction(patient):
 
 def main():
     EDF.setFilter(Injector.filter)
-    DataManifest.setFolder('./{}_seizure'.format(
-            Injector.dataset))
+    DataManifest.setFolder('./{}_seizure'.format(Injector.dataset))
     with open(f'./{Injector.location}.json') as f:
         patientList = set()
         data = json.load(f)

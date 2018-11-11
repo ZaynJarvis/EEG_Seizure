@@ -31,6 +31,7 @@ class DataManifest:
         self.seizureType = seizureType
         self.seg = None
         self.filterName = None
+        self.seizureDuration = 0
 
         os.makedirs(
             f'./{DataManifest.dirName}/{self.seizureType}', exist_ok=True)

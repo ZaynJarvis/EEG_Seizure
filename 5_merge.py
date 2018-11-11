@@ -15,8 +15,7 @@ def seizureMerge(dirName):
                 dirName, folder, fileItem))
             merge_of_seizure.append(raw)
             count += 1
-    edfRecord.saveFile(
-        mne.concatenate_raws(merge_of_seizure),
+    mne.concatenate_raws(merge_of_seizure).save(
         '{}/merged_seizure.fif'.format(dirName))
     print(f"You have {count} seizure segments merged.")
     return count
@@ -30,8 +29,7 @@ def noseizureMerge(dirName, count):
         raw = mne.io.read_raw_fif('{}/{}/{}'.format(dirName, 'noseizure',
                                                     fileItem))
         merge_of_noseizure.append(raw)
-    edfRecord.saveFile(
-        mne.concatenate_raws(merge_of_noseizure),
+    mne.concatenate_raws(merge_of_noseizure).save(
         '{}/merged_noseizure.fif'.format(path))
     print(f"You have {count} noseizure segments merged.")
 

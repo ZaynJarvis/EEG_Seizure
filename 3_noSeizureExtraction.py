@@ -65,8 +65,7 @@ def merge():
         raw = mne.io.read_raw_fif('{}/{}/{}'.format(DataManifest.dirName,
                                                     'noseizure', fileItem))
         merge_of_noseizure.append(raw)
-    edfRecord.saveFile(
-        mne.concatenate_raws(merge_of_noseizure),
+    mne.concatenate_raws(merge_of_noseizure).save(
         '{}/merged_noseizure.fif'.format(path))
 
 

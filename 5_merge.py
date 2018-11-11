@@ -1,5 +1,6 @@
 from devMod import Injector
 import os
+import mne
 dirName = input('Merge data directory: \ne.g. \'./train_5s_seg\'\n')
 
 

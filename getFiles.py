@@ -14,12 +14,6 @@ Case 3: edf files with respect to seizure types
   if selection in ['1', '2', '3']:
     break
 
-if selection in ['2', '3']:
-  seizureFolder = input("source seizure folder name?")
-  noseizureFolder = input("source non-seizure folder name?")
-
-distSeizureFolder = "./seizure/"
-distNoseizureFolder = "./no-seizure/"
 root = os.getcwd()
 
 def noSeperate():

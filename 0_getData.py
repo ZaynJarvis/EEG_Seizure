@@ -1,7 +1,7 @@
 import json
 import csv
 import sys
-from devMod import Patient, Injector
+from devMod import Patient, Injector, path
 
 
 def processData(fileName, currentPatient):
@@ -57,22 +57,39 @@ currentPatient = None
 with open(f'{Injector.location}.csv', newline='\n') as f:
     Patient.dataset = Injector.dataset
     reader = list(csv.reader(f, delimiter=','))
-    reader = reader[2:-4]
+    reader = reader[1:]
     firstLine = True
+
     for row in reader:
         if firstLine:
-            fileName = row[12].split('/')[Injector.fileNameCrop]
+            fileName = row[11].split('/')[3]
             firstLine = False
         if row[2]:
             processData(fileName, currentPatient)
-            fileName = row[12].split('/')[Injector.fileNameCrop]
-            currentPatient = Patient(row[2], row[11], row[4],
-                                     ' | '.join(row[6:8]))
-        currentPatient.addSession(row[5], row[13], row[14], row[15],
-                                  row[12].replace('tse', 'edf'))
-        currentPatient.addInfo('_'.join(row[12].split('_')[:-1]) + '.txt')
-    fileName = row[12].split('/')[Injector.fileNameCrop]
+            fileName = row[11].split('/')[3]
+            currentPatient = Patient(row[2], row[10], row[3],
+                                     ' | '.join(row[5:7]))
+        currentPatient.addSession(row[4], row[12], row[13], row[14],
+                                  row[11].replace('tse', 'edf'))
+        currentPatient.addInfo('_'.join(row[11].split('_')[:-1]) + '.txt')
+    fileName = row[11].split('/')[3]
     processData(fileName, currentPatient)
 
 with open(f'{Injector.location}.json', 'w') as outfile:
     json.dump(jsonOutput, outfile)
+
+seizure = []
+noSeizure = []
+
+for channel in path:
+    seizure.extend(jsonOutput[channel]['seizure'])
+    noSeizure.extend(jsonOutput[channel]['noSeizure'])
+
+with open(f'{Injector.location}-seizure.json', 'w') as outfile:
+    json.dump(seizure, outfile)
+
+with open(f'{Injector.location}-no-seizure.json', 'w') as outfile:
+    json.dump(noSeizure, outfile)
+
+print("Patient with seizure " + str(Patient.countx))
+print("Patient without seizure " + str(Patient.countn))

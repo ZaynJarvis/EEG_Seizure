@@ -25,7 +25,6 @@ class Patient:
         except Exception:
             self.info["age"] = 'unknown'
             self.info["gender"] = 'unknown'
-            print(self.id)
 
     def addSession(self, fileName, start, stop, seizureType, edf):
         if fileName:

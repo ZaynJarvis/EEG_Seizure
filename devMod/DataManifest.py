@@ -23,6 +23,8 @@ class DataManifest:
             writer = csv.DictWriter(
                 csvfile, fieldnames=DataManifest.fieldnames)
             writer.writeheader()
+        os.makedirs(
+            f'./{DataManifest.dirName}/{self.seizureType}', exist_ok=True)
 
     def __init__(self, fileName, seizureType, age, gender):
         self.age = age
@@ -32,11 +34,9 @@ class DataManifest:
         self.seg = None
         self.filterName = None
         self.seizureDuration = 0
-
-        os.makedirs(
-            f'./{DataManifest.dirName}/{self.seizureType}', exist_ok=True)
         self.sessionCount = DataManifest.fileList.get(self.ogFile, 0) + 1
         DataManifest.fileList[self.ogFile] = self.sessionCount
+        DataManifest.index += 1
 
     def generateRecord(self):
         patientID, sessionID, fileID = \
@@ -74,7 +74,6 @@ class DataManifest:
         }
 
     def writeToManifest(self):
-        DataManifest.index += 1
         with open(f'./{DataManifest.dirName}/manifest.csv', 'a') as csvfile:
             writer = csv.DictWriter(
                 csvfile, fieldnames=DataManifest.fieldnames)

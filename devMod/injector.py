@@ -1,21 +1,21 @@
 class Injector:
     timeWindow = 0
+    version = 'v1.5'
     @classmethod
     def datasetPrompt(cls):
         chooseSet = input("Which data set are you using?\n" +
                           "a). For Training Dataset;\n" +
                           "b). For Testing Dataset.\n")
-
         while True:
             if chooseSet.lower() == 'a':
                 cls.dataset = 'train'
-                cls.location = 'original_data_manifest/Temple_University_Hospital_EEG'
+                cls.location = 'original_data_manifest/train-' + cls.version
                 cls.folder = 'trainSet'
                 cls.fileNameCrop = 3
                 break
             elif chooseSet.lower() == 'b':
                 cls.dataset = 'test'
-                cls.location = 'original_data_manifest/dev_test'
+                cls.location = 'original_data_manifest/test-' + cls.version
                 cls.folder = 'testSet'
                 cls.fileNameCrop = 2
                 break
